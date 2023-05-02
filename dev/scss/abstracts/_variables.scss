@@ -1,3 +1,41 @@
+//font: https://fonts.google.com/specimen/Cuprum
+//font: https://fonts.google.com/specimen/Lato
+
+//font-family
+$ff: 'Cuprum', sans-serif;;
+
+//font family secundary
+$ffs:'Lato', sans-serif;
+
+//font-weight
+$fw-regular: 400;
+$fw-semibold: 600;
+$fw-bold: 700;
+
+//font-size
+$fs-lg: 4.375rem; //68
+$fs-med: 3.125rem; //48
+$fs-sm: 2; //32
+$fs-xsm: 1.5rem; //24
+$fs-xxsm: 1rem; //16
+$fs-xxxsm: .75rem; //12
+
+//colors
+$clr-dark: hsl(0, 0%, 0%);
+$clr-white: hsl(0, 0%, 100%);
+
+$clr-light: hsl(0, 0, 80%);
+$clr-grey: hsl(0, 0, 55%);
+$clr-light-grey: hsl(0, 0, 28%);
+$clr-dark-grey: hsl(0, 0%, 12%);
+$clr-red: hsl(354, 99%, 30%);
+$clr-dark-red: hsl(355, 77%, 24%);
+$clr-light-red-trans: hsl(354, 99%, 30%, 70%);
+$clr-dark-red-trans: hsl(354, 99%, 30%, 62%);
+$clr-orange: hsl(35, 84%, 50%);
+
+
+
 
 
 

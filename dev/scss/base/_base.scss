@@ -1,0 +1,90 @@
+@use '../vendor/media-queries';
+@use '../abstracts/variables';
+@use '../abstracts/mixin';
+
+p {
+    @include mixin.set-font(variables.$ffs, variables.$fw-regular, variables.$fs-xxsm, variables.$clr-white);
+    padding: 0;
+    margin: 0;
+}
+
+
+h2 {
+    @include mixin.set-font(variables.$ff, variables.$fw-bold, variables.$fs-lg, variables.$clr-white);
+
+    @include media-queries.respond-to(media-queries.$phone) {
+        font-size: variables.$fs-xxxsm; 
+        margin-right: 5rem;
+    }
+}
+
+h3 {
+    @include mixin.set-font(variables.$ff, variables.$fw-semibold, variables.$fs-med, variables.$clr-white);
+    margin: 1.5rem 0 0;
+
+    @include media-queries.respond-to(media-queries.$phone) {
+        font-size: variables.$fs-xxxsm; 
+        margin-right: 5rem;
+    }
+}
+
+h4 {
+    @include mixin.set-font(variables.$ff, variables.$fw-semibold, variables.$fs-sm, variables.$clr-white);
+    margin: 1.5rem 0 0;
+
+    @include media-queries.respond-to(media-queries.$phone) {
+        font-size: variables.$fs-xxxsm; 
+        margin-right: 5rem;
+    }
+}
+
+h5 {
+    @include mixin.set-font(variables.$ff, variables.$fw-bold, variables.$fs-xsm, variables.$clr-white);
+    margin: 0.5rem 0 0;
+    line-height: 3rem;
+
+    @include media-queries.respond-to(media-queries.$phone) {
+        font-size: variables.$fs-xxxsm; 
+        margin-right: 5rem;
+    }
+}
+
+h6 {
+    @include mixin.set-font(variables.$ff, variables.$fw-bold, variables.$fs-xsm, variables.$clr-white);
+    margin: 0.5rem 0 0;
+    line-height: 3rem;
+
+    @include media-queries.respond-to(media-queries.$phone) {
+        font-size: variables.$fs-xxxsm; 
+        margin-right: 5rem;
+    }
+}
+
+    // VOY POR AQUIIII
+.p-orange {
+    @include mixin.set-font(variables.$ff, variables.$fw-regular, variables.$fs-xxsm, variables.$clr-orange);
+    margin-right: 10rem;
+}
+
+.p-light {
+    @include mixin.set-font(variables.$ff, variables.$fw-regular, variables.$fs-xxxsm, variables.$clr-light);
+    margin-right: 10rem;
+}
+
+.p-white {
+    @include mixin.set-font(variables.$ff, variables.$fw-regular, variables.$fs-xxxsm, variables.$clr-white);
+    margin-right: 10rem;
+}
+
+
+.content {
+    @include mixin.set-font(variables.$ff, variables.$fw-regular, variables.$fs-sm, variables.$clr-dark);
+    width: 75%;
+    line-height: 3.5rem;
+    margin-bottom: 4rem;
+
+    @include media-queries.respond-to(media-queries.$phone) {
+        padding: 0;
+        width: 100%;
+    }
+}

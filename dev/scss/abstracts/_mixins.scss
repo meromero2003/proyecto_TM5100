@@ -1,5 +1,38 @@
 
+@use '../abstracts/variables';
+@use '../vendor/media-queries';
 
+//fonst
+@mixin set-font($ffamily, $fweight, $fsize, $fcolor){
+    font-family: $ffamily;
+    font-weight: $fweight;
+    font-size: $fsize;
+    color: $fcolor;
+}
 
+//buttons
+@mixin btn($border, $backg, $color){
+    position: relative;
+    display: table-cell;
+    place-items: center;
+    padding: 1rem 2rem;
+    margin: 0rem 1rem;
+    border-radius: 5rem;
+    text-decoration: none;
+    font-family: variables.$ff;
+    font-weight: variables.$fw-bold;
+    font-size: variables.$fs-xxxsm;
+    border: $border;
+    background: $backg;
+    color: $color;
+
+    @include media-queries.respond-to(media-queries.$phone){
+        display: block;
+        margin: 1rem auto;
+        width: 80%;
+        text-align: center;
+
+    }
+}
 
 
