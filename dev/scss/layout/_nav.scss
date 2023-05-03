@@ -1,0 +1,5 @@
+@use '../abstracts/variables';
+
+.bkg-red{
+    background: variables.$clr-red;
+}

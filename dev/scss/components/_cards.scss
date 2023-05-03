@@ -1,0 +1,15 @@
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+@use '../vendor/media-queries';
+
+.featured-card{
+    padding: 1rem;   
+    margin-bottom: 2rem; 
+}
+
+.best-card{
+    @include mixins.btn(variables.$clr-light-grey, variables.$clr-light-grey, variables.$clr-dark);  
+    margin-bottom: 2rem; 
+
+}
+

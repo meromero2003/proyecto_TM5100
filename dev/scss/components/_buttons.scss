@@ -1,0 +1,64 @@
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+@use '../vendor/media-queries';
+
+.nav-red-btn {
+    @include mixins.btn(variables.$clr-red, variables.$clr-red, variables.$clr-red);
+    @include mixins.set-font(variables.$ff, variables.$fw-regular, variables.$fs-xxsm, variables.$clr-white);
+    border-radius: 24px;
+}
+
+:hover.nav-red-btn {
+    @include mixins.btn(variables.$clr-dark-red, variables.$clr-dark-red, variables.$clr-dark-red);
+    @include mixins.set-font(variables.$ff, variables.$fw-regular, variables.$fs-xxsm, variables.$clr-white);
+}
+
+.nav-orange-btn {
+    @include mixins.btn(variables.$clr-orange, variables.$clr-orange, variables.$clr-orange);
+    @include mixins.set-font(variables.$ff, variables.$fw-regular, variables.$fs-xxsm, variables.$clr-white);
+    border-radius: 4px;
+}
+
+:hover.nav-orange-btn {
+    @include mixins.btn(variables.$clr-white, variables.$clr-white, variables.$clr-white);
+    @include mixins.set-font(variables.$ff, variables.$fw-regular, variables.$fs-xxsm, variables.$clr-orange);
+    border-radius: 4px;
+}
+
+
+.nav-orange-arrow-btn {
+    @include mixins.btn(variables.$clr-dark, variables.$clr-dark, variables.$clr-white);
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+}
+
+.search {
+    border: none;
+    background-color: transparent;
+    color: variables.$clr-white;
+}
+
+:hover.search {
+    border: none;
+    color: variables.$clr-white;
+    background: variables.$clr-orange;
+    color: variables.$clr-white;
+}
+
+.form-control:valid {
+    background:  transparent;
+    color: beige;
+  }
+
+.form-control::placeholder{
+    color: beige;
+}
+
+.form-control:focus {
+    border-color: variables.$clr-white;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 255, 255, 0.6);
+  }
+
+
+
+

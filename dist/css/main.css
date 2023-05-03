@@ -13386,6 +13386,404 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+p {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: hsl(0deg, 0%, 100%);
+  padding: 0;
+  margin: 0;
+}
+
+h2 {
+  font-family: "Cuprum", sans-serif;
+  font-weight: 700;
+  font-size: 4.375rem;
+  color: hsl(0deg, 0%, 100%);
+}
+@media only screen and (max-width: 480px) {
+  h2 {
+    font-size: 0.75rem;
+    margin-right: 5rem;
+  }
+}
+
+h3 {
+  font-family: "Cuprum", sans-serif;
+  font-weight: 600;
+  font-size: 3.125rem;
+  color: hsl(0deg, 0%, 100%);
+  margin: 1.5rem 0 0;
+}
+@media only screen and (max-width: 480px) {
+  h3 {
+    font-size: 0.75rem;
+    margin-right: 5rem;
+  }
+}
+
+h4 {
+  font-family: "Cuprum", sans-serif;
+  font-weight: 600;
+  font-size: 2;
+  color: hsl(0deg, 0%, 100%);
+  margin: 1.5rem 0 0;
+}
+@media only screen and (max-width: 480px) {
+  h4 {
+    font-size: 0.75rem;
+    margin-right: 5rem;
+  }
+}
+
+h5 {
+  font-family: "Cuprum", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: hsl(0deg, 0%, 100%);
+  margin: 0.5rem 0 0;
+  line-height: 3rem;
+}
+@media only screen and (max-width: 480px) {
+  h5 {
+    font-size: 0.75rem;
+    margin-right: 5rem;
+  }
+}
+
+h6 {
+  font-family: "Cuprum", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: hsl(0deg, 0%, 100%);
+  margin: 0.5rem 0 0;
+  line-height: 3rem;
+}
+@media only screen and (max-width: 480px) {
+  h6 {
+    font-size: 0.75rem;
+    margin-right: 5rem;
+  }
+}
+
+.p-orange {
+  font-family: "Cuprum", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: hsl(35deg, 84%, 50%);
+  margin-right: 10rem;
+}
+
+.p-light {
+  font-family: "Cuprum", sans-serif;
+  font-weight: 400;
+  font-size: 0.75rem;
+  color: hsl(0deg, 0%, 80%);
+  margin-right: 10rem;
+}
+
+.p-white {
+  font-family: "Cuprum", sans-serif;
+  font-weight: 400;
+  font-size: 0.75rem;
+  color: hsl(0deg, 0%, 100%);
+  margin-right: 10rem;
+}
+
+.content {
+  font-family: "Cuprum", sans-serif;
+  font-weight: 400;
+  font-size: 2;
+  color: hsl(0deg, 0%, 0%);
+  width: 75%;
+  line-height: 3.5rem;
+  margin-bottom: 4rem;
+}
+@media only screen and (max-width: 480px) {
+  .content {
+    padding: 0;
+    width: 100%;
+  }
+}
+
+html {
+  font-size: 14px;
+}
+
 body {
-  font-family: "Source Sans Pro", sans-serif;
+  max-height: 100vh;
+  line-height: 1.2;
+  font-family: "Cuprum", sans-serif;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.nav-red-btn {
+  position: relative;
+  display: table-cell;
+  place-items: center;
+  padding: 1rem 2rem;
+  margin: 0rem 1rem;
+  border-radius: 5rem;
+  text-decoration: none;
+  font-family: "Cuprum", sans-serif;
+  font-weight: 700;
+  font-size: 0.75rem;
+  border: hsl(354deg, 99%, 30%);
+  background: hsl(354deg, 99%, 30%);
+  color: hsl(354deg, 99%, 30%);
+  font-family: "Cuprum", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: hsl(0deg, 0%, 100%);
+  border-radius: 24px;
+}
+@media only screen and (max-width: 480px) {
+  .nav-red-btn {
+    display: block;
+    margin: 1rem auto;
+    width: 80%;
+    text-align: center;
+  }
+}
+
+:hover.nav-red-btn {
+  position: relative;
+  display: table-cell;
+  place-items: center;
+  padding: 1rem 2rem;
+  margin: 0rem 1rem;
+  border-radius: 5rem;
+  text-decoration: none;
+  font-family: "Cuprum", sans-serif;
+  font-weight: 700;
+  font-size: 0.75rem;
+  border: hsl(355deg, 77%, 24%);
+  background: hsl(355deg, 77%, 24%);
+  color: hsl(355deg, 77%, 24%);
+  font-family: "Cuprum", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: hsl(0deg, 0%, 100%);
+}
+@media only screen and (max-width: 480px) {
+  :hover.nav-red-btn {
+    display: block;
+    margin: 1rem auto;
+    width: 80%;
+    text-align: center;
+  }
+}
+
+.nav-orange-btn {
+  position: relative;
+  display: table-cell;
+  place-items: center;
+  padding: 1rem 2rem;
+  margin: 0rem 1rem;
+  border-radius: 5rem;
+  text-decoration: none;
+  font-family: "Cuprum", sans-serif;
+  font-weight: 700;
+  font-size: 0.75rem;
+  border: hsl(35deg, 84%, 50%);
+  background: hsl(35deg, 84%, 50%);
+  color: hsl(35deg, 84%, 50%);
+  font-family: "Cuprum", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: hsl(0deg, 0%, 100%);
+  border-radius: 4px;
+}
+@media only screen and (max-width: 480px) {
+  .nav-orange-btn {
+    display: block;
+    margin: 1rem auto;
+    width: 80%;
+    text-align: center;
+  }
+}
+
+:hover.nav-orange-btn {
+  position: relative;
+  display: table-cell;
+  place-items: center;
+  padding: 1rem 2rem;
+  margin: 0rem 1rem;
+  border-radius: 5rem;
+  text-decoration: none;
+  font-family: "Cuprum", sans-serif;
+  font-weight: 700;
+  font-size: 0.75rem;
+  border: hsl(0deg, 0%, 100%);
+  background: hsl(0deg, 0%, 100%);
+  color: hsl(0deg, 0%, 100%);
+  font-family: "Cuprum", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: hsl(35deg, 84%, 50%);
+  border-radius: 4px;
+}
+@media only screen and (max-width: 480px) {
+  :hover.nav-orange-btn {
+    display: block;
+    margin: 1rem auto;
+    width: 80%;
+    text-align: center;
+  }
+}
+
+.nav-orange-arrow-btn {
+  position: relative;
+  display: table-cell;
+  place-items: center;
+  padding: 1rem 2rem;
+  margin: 0rem 1rem;
+  border-radius: 5rem;
+  text-decoration: none;
+  font-family: "Cuprum", sans-serif;
+  font-weight: 700;
+  font-size: 0.75rem;
+  border: hsl(0deg, 0%, 0%);
+  background: hsl(0deg, 0%, 0%);
+  color: hsl(0deg, 0%, 100%);
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+}
+@media only screen and (max-width: 480px) {
+  .nav-orange-arrow-btn {
+    display: block;
+    margin: 1rem auto;
+    width: 80%;
+    text-align: center;
+  }
+}
+
+.search {
+  border: none;
+  background-color: transparent;
+  color: hsl(0deg, 0%, 100%);
+}
+
+:hover.search {
+  border: none;
+  color: hsl(0deg, 0%, 100%);
+  background: hsl(35deg, 84%, 50%);
+  color: hsl(0deg, 0%, 100%);
+}
+
+.form-control:valid {
+  background: transparent;
+  color: beige;
+}
+
+.form-control::-webkit-input-placeholder {
+  color: beige;
+}
+
+.form-control::-moz-placeholder {
+  color: beige;
+}
+
+.form-control:-ms-input-placeholder {
+  color: beige;
+}
+
+.form-control::-ms-input-placeholder {
+  color: beige;
+}
+
+.form-control::placeholder {
+  color: beige;
+}
+
+.form-control:focus {
+  border-color: hsl(0deg, 0%, 100%);
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 255, 255, 0.6);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 255, 255, 0.6);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.container {
+  display: -ms-grid;
+  display: grid;
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+@media only screen and (max-width: 480px) {
+  .row {
+    display: -ms-grid;
+    display: grid;
+  }
+}
+
+.col {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 0%;
+          flex: 1 0 0%;
+}
+
+.pl {
+  padding: 3rem;
+}
+@media only screen and (max-width: 480px) {
+  .pl {
+    padding: 0;
+  }
+}
+
+.m-y {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.featured-card {
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+.best-card {
+  position: relative;
+  display: table-cell;
+  place-items: center;
+  padding: 1rem 2rem;
+  margin: 0rem 1rem;
+  border-radius: 5rem;
+  text-decoration: none;
+  font-family: "Cuprum", sans-serif;
+  font-weight: 700;
+  font-size: 0.75rem;
+  border: hsl(0deg, 0%, 28%);
+  background: hsl(0deg, 0%, 28%);
+  color: hsl(0deg, 0%, 0%);
+  margin-bottom: 2rem;
+}
+@media only screen and (max-width: 480px) {
+  .best-card {
+    display: block;
+    margin: 1rem auto;
+    width: 80%;
+    text-align: center;
+  }
+}
+
+.footer {
+  background: hsl(35deg, 84%, 50%);
+}
+
+.bkg-red {
+  background: hsl(354deg, 99%, 30%);
 }

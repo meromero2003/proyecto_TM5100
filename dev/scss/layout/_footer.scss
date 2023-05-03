@@ -1,0 +1,7 @@
+@use '../vendor/media-queries';
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+
+.footer {
+    background: variables.$clr-orange;
+}

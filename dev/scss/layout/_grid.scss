@@ -1,0 +1,30 @@
+@use '../vendor/media-queries';
+
+.container{
+    display: grid;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+
+    @include media-queries.respond-to(media-queries.$phone){
+        display: grid;
+    }
+}
+
+.col{
+    flex: 1 0 0%;
+}
+
+.pl{
+    padding: 3rem;
+    @include media-queries.respond-to(media-queries.$phone){
+        padding: 0;
+    }
+}
+
+.m-y{
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}

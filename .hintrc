@@ -3,6 +3,9 @@
     "development"
   ],
   "hints": {
-    "button-type": "off"
+    "button-type": "off",
+    "compat-api/css": "off",
+    "css-prefix-order": "off",
+    "axe/name-role-value": "off"
   }
 }
