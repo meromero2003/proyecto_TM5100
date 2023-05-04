@@ -1,4 +1,7 @@
 @use '../vendor/media-queries';
+@use '../abstracts/variables';
+
+
 
 .container{
     display: grid;
@@ -28,3 +31,4 @@
     margin-top: 3rem;
     margin-bottom: 3rem;
 }
+

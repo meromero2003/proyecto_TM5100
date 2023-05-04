@@ -2,6 +2,16 @@
 @use '../abstracts/mixins';
 @use '../vendor/media-queries';
 
+.container-selection-week{
+    background: variables.$clr-dark-red-trans;
+    box-shadow: 25px 25px 50px 0 variables.$clr-dark-grey inset, -25px -25px 50px 0 variables.$clr-dark-grey inset; 
+
+}
+
+.arrows{
+    width: 0%;
+}
+
 .featured-card{
     padding: 1rem;   
     margin-bottom: 2rem; 
@@ -10,6 +20,32 @@
 .best-card{
     @include mixins.btn(variables.$clr-light-grey, variables.$clr-light-grey, variables.$clr-dark);  
     margin-bottom: 2rem; 
-
 }
 
+.card-recipe{
+    border-radius: 3rem; 
+}
+
+.best-recipes{
+    background: variables.$clr-light-grey;
+    margin: 1rem;
+    
+}
+
+:hover.card-recipe.text {
+    transition: all 0.3s ease;
+    opacity: 1;
+    max-height:40px;
+ }
+
+:hover.carousel-cell{
+    transform: scale(50%);
+
+    background-color: variables.$clr-red;
+}
+
+
+
+:hover.ul{
+    visibility: collapse;
+}

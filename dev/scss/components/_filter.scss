@@ -1,0 +1,30 @@
+@use '../vendor/media-queries';
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+
+
+.accordion-item{
+    background: transparent;
+}
+
+.accordion-button{
+    background: variables.$clr-light-grey;
+}
+
+.accordion-button:not(.collapsed){
+    background: variables.$clr-light-grey;
+}
+
+.list-group-item{
+    background: transparent;
+    color: variables.$clr-white;
+}
+
+.p{
+    border: none;
+}
+
+.accordion-button::after {
+    color: white;
+    // background: rgb(80, 80, 83);
+}

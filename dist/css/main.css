@@ -13386,6 +13386,15 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+body {
+  background: hsl(0deg, 0%, 12%);
+}
+
+.row {
+  width: none;
+  max-width: none;
+}
+
 p {
   font-family: "Lato", sans-serif;
   font-weight: 400;
@@ -13395,9 +13404,18 @@ p {
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+  color: hsl(0deg, 0%, 100%);
+}
+
+a:hover {
+  color: hsl(35deg, 84%, 50%);
+}
+
 h2 {
   font-family: "Cuprum", sans-serif;
-  font-weight: 700;
+  font-weight: 400;
   font-size: 4.375rem;
   color: hsl(0deg, 0%, 100%);
 }
@@ -13408,9 +13426,13 @@ h2 {
   }
 }
 
+.red-h2 {
+  color: hsl(354deg, 99%, 30%);
+}
+
 h3 {
   font-family: "Cuprum", sans-serif;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 3.125rem;
   color: hsl(0deg, 0%, 100%);
   margin: 1.5rem 0 0;
@@ -13424,7 +13446,7 @@ h3 {
 
 h4 {
   font-family: "Cuprum", sans-serif;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 2;
   color: hsl(0deg, 0%, 100%);
   margin: 1.5rem 0 0;
@@ -13438,7 +13460,7 @@ h4 {
 
 h5 {
   font-family: "Cuprum", sans-serif;
-  font-weight: 700;
+  font-weight: 400;
   font-size: 1.5rem;
   color: hsl(0deg, 0%, 100%);
   margin: 0.5rem 0 0;
@@ -13452,9 +13474,9 @@ h5 {
 }
 
 h6 {
-  font-family: "Cuprum", sans-serif;
-  font-weight: 700;
-  font-size: 1.5rem;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 0.75rem;
   color: hsl(0deg, 0%, 100%);
   margin: 0.5rem 0 0;
   line-height: 3rem;
@@ -13466,28 +13488,12 @@ h6 {
   }
 }
 
-.p-orange {
-  font-family: "Cuprum", sans-serif;
-  font-weight: 400;
-  font-size: 1rem;
+.orange {
   color: hsl(35deg, 84%, 50%);
-  margin-right: 10rem;
 }
 
-.p-light {
-  font-family: "Cuprum", sans-serif;
-  font-weight: 400;
-  font-size: 0.75rem;
-  color: hsl(0deg, 0%, 80%);
-  margin-right: 10rem;
-}
-
-.p-white {
-  font-family: "Cuprum", sans-serif;
-  font-weight: 400;
-  font-size: 0.75rem;
+.white {
   color: hsl(0deg, 0%, 100%);
-  margin-right: 10rem;
 }
 
 .content {
@@ -13711,6 +13717,12 @@ img {
   max-width: 100%;
 }
 
+.m-image {
+  margin-top: 6rem;
+  margin-left: 1rem;
+  width: 92%;
+}
+
 .container {
   display: -ms-grid;
   display: grid;
@@ -13750,6 +13762,16 @@ img {
   margin-bottom: 3rem;
 }
 
+.container-selection-week {
+  background: hsla(354deg, 99%, 30%, 0.62);
+  -webkit-box-shadow: 25px 25px 50px 0 hsl(0deg, 0%, 12%) inset, -25px -25px 50px 0 hsl(0deg, 0%, 12%) inset;
+          box-shadow: 25px 25px 50px 0 hsl(0deg, 0%, 12%) inset, -25px -25px 50px 0 hsl(0deg, 0%, 12%) inset;
+}
+
+.arrows {
+  width: 0%;
+}
+
 .featured-card {
   padding: 1rem;
   margin-bottom: 2rem;
@@ -13780,10 +13802,61 @@ img {
   }
 }
 
+.card-recipe {
+  border-radius: 3rem;
+}
+
+.best-recipes {
+  background: hsl(0deg, 0%, 28%);
+  margin: 1rem;
+}
+
+:hover.card-recipe.text {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  opacity: 1;
+  max-height: 40px;
+}
+
+:hover.carousel-cell {
+  -webkit-transform: scale(50%);
+          transform: scale(50%);
+  background-color: hsl(354deg, 99%, 30%);
+}
+
+:hover.ul {
+  visibility: collapse;
+}
+
 .footer {
   background: hsl(35deg, 84%, 50%);
 }
 
 .bkg-red {
   background: hsl(354deg, 99%, 30%);
+}
+
+.accordion-item {
+  background: transparent;
+}
+
+.accordion-button {
+  background: hsl(0deg, 0%, 28%);
+}
+
+.accordion-button:not(.collapsed) {
+  background: hsl(0deg, 0%, 28%);
+}
+
+.list-group-item {
+  background: transparent;
+  color: hsl(0deg, 0%, 100%);
+}
+
+.p {
+  border: none;
+}
+
+.accordion-button::after {
+  color: white;
 }

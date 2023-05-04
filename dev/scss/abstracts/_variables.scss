@@ -8,6 +8,7 @@ $ff: 'Cuprum', sans-serif;;
 $ffs:'Lato', sans-serif;
 
 //font-weight
+$fw-light: 100;
 $fw-regular: 400;
 $fw-semibold: 600;
 $fw-bold: 700;
@@ -23,6 +24,7 @@ $fs-xxxsm: .75rem; //12
 //colors
 $clr-dark: hsl(0, 0%, 0%);
 $clr-white: hsl(0, 0%, 100%);
+$clr-light-white: hsla(0, 0%, 100%, 0.637);
 
 $clr-light: hsl(0, 0%, 80%);
 $clr-grey: hsl(0, 0%, 55%);

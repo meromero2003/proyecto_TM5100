@@ -6,6 +6,8 @@
     "button-type": "off",
     "compat-api/css": "off",
     "css-prefix-order": "off",
-    "axe/name-role-value": "off"
+    "axe/name-role-value": "off",
+    "axe/parsing": "off",
+    "axe/aria": "off"
   }
 }

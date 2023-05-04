@@ -2,80 +2,101 @@
 @use '../abstracts/variables';
 @use '../abstracts/mixins';
 
+
+body {
+    background: variables.$clr-dark-grey;
+}
+
+.row {
+    width: none;
+    max-width: none;
+}
+
 p {
     @include mixins.set-font(variables.$ffs, variables.$fw-regular, variables.$fs-xxsm, variables.$clr-white);
     padding: 0;
     margin: 0;
 }
 
+a {
+    text-decoration: none;
+    color: variables.$clr-white;
+}
+
+a:hover {
+    color: variables.$clr-orange
+}
+
 
 h2 {
-    @include mixins.set-font(variables.$ff, variables.$fw-bold, variables.$fs-lg, variables.$clr-white);
+    @include mixins.set-font(variables.$ff, variables.$fw-regular, variables.$fs-lg, variables.$clr-white);
 
     @include media-queries.respond-to(media-queries.$phone) {
-        font-size: variables.$fs-xxxsm; 
+        font-size: variables.$fs-xxxsm;
         margin-right: 5rem;
     }
 }
 
+.red-h2 {
+    color: variables.$clr-red;
+}
+
 h3 {
-    @include mixins.set-font(variables.$ff, variables.$fw-semibold, variables.$fs-med, variables.$clr-white);
+    @include mixins.set-font(variables.$ff, variables.$fw-regular, variables.$fs-med, variables.$clr-white);
     margin: 1.5rem 0 0;
 
     @include media-queries.respond-to(media-queries.$phone) {
-        font-size: variables.$fs-xxxsm; 
+        font-size: variables.$fs-xxxsm;
         margin-right: 5rem;
     }
 }
 
 h4 {
-    @include mixins.set-font(variables.$ff, variables.$fw-semibold, variables.$fs-sm, variables.$clr-white);
+    @include mixins.set-font(variables.$ff, variables.$fw-regular, variables.$fs-sm, variables.$clr-white);
     margin: 1.5rem 0 0;
 
     @include media-queries.respond-to(media-queries.$phone) {
-        font-size: variables.$fs-xxxsm; 
+        font-size: variables.$fs-xxxsm;
         margin-right: 5rem;
     }
 }
 
 h5 {
-    @include mixins.set-font(variables.$ff, variables.$fw-bold, variables.$fs-xsm, variables.$clr-white);
+    @include mixins.set-font(variables.$ff, variables.$fw-regular, variables.$fs-xsm, variables.$clr-white);
     margin: 0.5rem 0 0;
     line-height: 3rem;
 
     @include media-queries.respond-to(media-queries.$phone) {
-        font-size: variables.$fs-xxxsm; 
+        font-size: variables.$fs-xxxsm;
         margin-right: 5rem;
     }
 }
+
 
 h6 {
-    @include mixins.set-font(variables.$ff, variables.$fw-bold, variables.$fs-xsm, variables.$clr-white);
+    @include mixins.set-font(variables.$ffs, variables.$fw-regular, variables.$fs-xxxsm, variables.$clr-white);
     margin: 0.5rem 0 0;
     line-height: 3rem;
 
     @include media-queries.respond-to(media-queries.$phone) {
-        font-size: variables.$fs-xxxsm; 
+        font-size: variables.$fs-xxxsm;
         margin-right: 5rem;
     }
 }
 
-    // VOY POR AQUIIII
-.p-orange {
-    @include mixins.set-font(variables.$ff, variables.$fw-regular, variables.$fs-xxsm, variables.$clr-orange);
-    margin-right: 10rem;
+
+
+
+
+.orange {
+    color: variables.$clr-orange;
 }
 
-.p-light {
-    @include mixins.set-font(variables.$ff, variables.$fw-regular, variables.$fs-xxxsm, variables.$clr-light);
-    margin-right: 10rem;
+.white {
+    color: variables.$clr-white;
 }
 
-.p-white {
-    @include mixins.set-font(variables.$ff, variables.$fw-regular, variables.$fs-xxxsm, variables.$clr-white);
-    margin-right: 10rem;
-}
-
+// VOY POR AQUIIII
 
 .content {
     @include mixins.set-font(variables.$ff, variables.$fw-regular, variables.$fs-sm, variables.$clr-dark);
