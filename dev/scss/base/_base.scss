@@ -79,7 +79,11 @@ h5 {
     // }
 }
 
-
+.h5 {
+    @include mixins.set-font(variables.$ffs, variables.$fw-regular, variables.$fs-xxsm, variables.$clr-white);
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
 
 h6 {
     @include mixins.set-font(variables.$ffs, variables.$fw-regular, variables.$fs-xxxsm, variables.$clr-white);

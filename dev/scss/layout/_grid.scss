@@ -58,6 +58,29 @@
     }
 }
 
+.mtb2 {
+    margin-left: 48rem;
+    margin-top: 8rem;
+    color: variables.$clr-white;
+
+    @include media-queries.respond-to(media-queries.$phone) {
+        margin-left: 1rem;
+        width: 90%;
+        margin-right: 3rem;
+        margin-top: 8rem;
+
+        .h3-grid {
+            font-size: variables.$fs-sm;
+            color: variables.$clr-white;
+        }
+
+        .h5 {
+            font-size: variables.$fs-xxsm;
+            color: variables.$clr-white;
+        }
+    }
+}
+
 .padd {
     padding: 3rem;
 }

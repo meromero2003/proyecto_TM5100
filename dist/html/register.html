@@ -38,37 +38,60 @@
     <div class="container-fluid container-img p-0 m-0 position-relative">
         <img src="../images/dish1.png" class="position-absolute container-img" alt="Background">
         <div class="d-flex justify-content-end position-absolute mtb">
-            <div class="align-self-center container-grey my-5 py-5">
-                <h3 class="fw-bold text-center mt-5 ">Inicia Sesión</h3>
+            <div class="align-self-center container-grey py-5">
+                <h3 class="fw-bold text-center mt-5 ">Registrarse</h3>
                 <h5 class="text-center h5">Te damos la bienvenida</h5>
 
-                <form action="" method="post">
+                <form action="" method="">
+
                     <div class="row d-flex justify-content-center gap-3 mx-2">
+
+                        <div class="mb-3 col-lg-9 col-md-9 col-sm-12">
+                            <label for="nombre" class="form-label">Nombre</label>
+                            <input id="nombre" class="form-control" type="text" name="nombre" placeholder="Nombre">
+                        </div>
+                        
+                        <div class="row col-lg-9 col-md-9 col-sm-12 p-0">
+                            <div class="col mb-3 col-lg-9 col-md-9 col-sm-12">
+                                <label for="primerApellido" class="form-label fw-bold">Primer Apellido</label>
+                                <input id="primerApellido" class="form-control" name="primerApellido" type="text"
+                                    placeholder="Primer Apellido">
+                            </div>
+                            <div class=" col mb-3 col-lg-9 col-md-9 col-sm-12">
+                                <label for="segundoApellido" class="form-label fw-bold">Segundo Apellido</label>
+                                <input id="segundoApellido" class="form-control" name="segundoApellido" type="text"
+                                    placeholder="Segundo Apellido">
+                            </div>
+                        </div>
+
+                        <div class="mb-3 col-lg-9 col-md-9 col-sm-12">
+                            <label for="email" class="form-label">Email</label>
+                            <input id="email" class="form-control" type="text" name="email" placeholder="Email">
+                        </div>
+
                         <div class="mb-3 col-lg-9 col-md-9 col-sm-12">
                             <label for="usuario" class="form-label">Usuario</label>
                             <input id="usuario" class="form-control" type="text" name="usuario" placeholder="Usuario">
                         </div>
-                        <div class="mb-3 col-lg-9 col-md-9 col-sm-12">
-                            <label for="contraseña" class="form-label">Contraseña <span><a class="text-link px-2"
-                                        href="">¿Has olvidado tu
-                                        contraseña?</a></span></label>
-                            <input id="contraseña" class="form-control" type="password" name="contraseña"
-                                placeholder="Contraseña">
-                        </div>
-                    </div>
 
-                    <button class="nav-orange-btn mx-auto fw-bold d-flex justify-content-center mt-4 mb-3">Iniciar
-                        Sesión</button>
+                        <div class="mb-3 col-lg-9 col-md-9 col-sm-12">
+                            <label for="contraseña" class="form-label">Contraseña</label>
+                            <input id="contraseña" class="form-control" type="password" name="contraseña" placeholder="Contraseña">
+                        </div>
                         
-                    <p class=" text-center text-content">¿No tienes una cuenta? <span> <a class="text-link"
-                                href="./register.html">Registrate</a></span></p>
+
+                    </div>
+                    <button class="nav-orange-btn mx-auto fw-bold d-flex justify-content-center mt-4 mb-3">
+                        Registrarse
+                    </button>
+                    <p class=" text-center text-content">Al unirte, acepta los <span> <a class="text-link" >Términos y Politica de privacidad</a></span></p>
                 </form>
             </div>
 
         </div>
 
 
-
+       
 
     </div>
 
