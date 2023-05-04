@@ -13506,11 +13506,6 @@ h6 {
   color: hsl(0deg, 0%, 100%);
 }
 
-.container-img {
-  max-width: 100%;
-  min-height: 768px;
-}
-
 .content {
   font-family: "Cuprum", sans-serif;
   font-weight: 400;
@@ -13736,6 +13731,15 @@ img {
   width: 92%;
 }
 
+.container-img {
+  max-width: 100%;
+  min-height: 768px;
+}
+
+.container-img2 {
+  max-width: 20%;
+}
+
 .container {
   display: -ms-grid;
   display: grid;
@@ -13924,4 +13928,12 @@ img {
 
 .accordion-button::after {
   color: white;
+}
+
+.form-check-input {
+  background: transparent;
+}
+
+.list-group-item {
+  line-height: 2rem;
 }

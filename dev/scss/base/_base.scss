@@ -110,10 +110,7 @@ h6 {
 
 // VOY POR AQUIIII
 
-.container-img {
-    max-width: 100%;
-    min-height: 768px;
-}
+
 
 .content {
     @include mixins.set-font(variables.$ff, variables.$fw-regular, variables.$fs-sm, variables.$clr-white);
