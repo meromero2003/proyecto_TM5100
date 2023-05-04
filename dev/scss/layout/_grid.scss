@@ -3,32 +3,45 @@
 
 
 
-.container{
+.container {
     display: grid;
 }
 
-.row{
+.row {
     display: flex;
     flex-wrap: wrap;
 
-    @include media-queries.respond-to(media-queries.$phone){
+
+    @include media-queries.respond-to(media-queries.$phone) {
         display: grid;
     }
 }
 
-.col{
+.col {
     flex: 1 0 0%;
 }
 
-.pl{
+.pl {
     padding: 3rem;
-    @include media-queries.respond-to(media-queries.$phone){
+
+    @include media-queries.respond-to(media-queries.$phone) {
         padding: 0;
     }
 }
 
-.m-y{
+.m-y {
     margin-top: 3rem;
     margin-bottom: 3rem;
 }
 
+.mtb {
+    margin-left: 52rem;
+    margin-top: 16rem;
+    
+    @include media-queries.respond-to(media-queries.$phone) {
+        margin-left: 1rem;
+        width: 90%;
+        margin-right: 3rem;
+        margin-top: 8rem;
+    }
+}

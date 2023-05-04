@@ -13404,6 +13404,20 @@ p {
   margin: 0;
 }
 
+label {
+  font-family: "Cuprum", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: hsl(0deg, 0%, 100%);
+}
+
+input {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: hsl(0deg, 0%, 100%);
+}
+
 a {
   text-decoration: none;
   color: hsl(0deg, 0%, 100%);
@@ -13437,19 +13451,12 @@ h3 {
   color: hsl(0deg, 0%, 100%);
   margin: 1.5rem 0 0;
 }
-@media only screen and (max-width: 480px) {
-  h3 {
-    font-size: 0.75rem;
-    margin-right: 5rem;
-  }
-}
 
 h4 {
   font-family: "Cuprum", sans-serif;
   font-weight: 400;
   font-size: 2;
   color: hsl(0deg, 0%, 100%);
-  margin: 1.5rem 0 0;
 }
 @media only screen and (max-width: 480px) {
   h4 {
@@ -13466,11 +13473,13 @@ h5 {
   margin: 0.5rem 0 0;
   line-height: 3rem;
 }
-@media only screen and (max-width: 480px) {
-  h5 {
-    font-size: 0.75rem;
-    margin-right: 5rem;
-  }
+
+.h5 {
+  font-family: "Lato", sans-serif;
+  font-weight: 100;
+  font-size: 2;
+  color: hsl(0deg, 0%, 100%);
+  margin-bottom: 2rem;
 }
 
 h6 {
@@ -13496,14 +13505,17 @@ h6 {
   color: hsl(0deg, 0%, 100%);
 }
 
+.container-img {
+  max-width: 100%;
+  min-height: 768px;
+}
+
 .content {
   font-family: "Cuprum", sans-serif;
   font-weight: 400;
   font-size: 2;
-  color: hsl(0deg, 0%, 0%);
-  width: 75%;
-  line-height: 3.5rem;
-  margin-bottom: 4rem;
+  color: hsl(0deg, 0%, 100%);
+  margin-bottom: 1rem;
 }
 @media only screen and (max-width: 480px) {
   .content {
@@ -13762,6 +13774,19 @@ img {
   margin-bottom: 3rem;
 }
 
+.mtb {
+  margin-left: 52rem;
+  margin-top: 16rem;
+}
+@media only screen and (max-width: 480px) {
+  .mtb {
+    margin-left: 1rem;
+    width: 90%;
+    margin-right: 3rem;
+    margin-top: 8rem;
+  }
+}
+
 .container-selection-week {
   background: hsla(354deg, 99%, 30%, 0.62);
   -webkit-box-shadow: 25px 25px 50px 0 hsl(0deg, 0%, 12%) inset, -25px -25px 50px 0 hsl(0deg, 0%, 12%) inset;
@@ -13826,6 +13851,10 @@ img {
 
 :hover.ul {
   visibility: collapse;
+}
+
+.container-grey {
+  background: hsl(0deg, 0%, 55%);
 }
 
 .footer {
