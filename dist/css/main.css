@@ -13455,7 +13455,7 @@ h3 {
 h4 {
   font-family: "Cuprum", sans-serif;
   font-weight: 400;
-  font-size: 2;
+  font-size: 2rem;
   color: hsl(0deg, 0%, 100%);
 }
 @media only screen and (max-width: 480px) {
@@ -13472,14 +13472,6 @@ h5 {
   color: hsl(0deg, 0%, 100%);
   margin: 0.5rem 0 0;
   line-height: 3rem;
-}
-
-.h5 {
-  font-family: "Lato", sans-serif;
-  font-weight: 100;
-  font-size: 2;
-  color: hsl(0deg, 0%, 100%);
-  margin-bottom: 2rem;
 }
 
 h6 {
@@ -13513,7 +13505,7 @@ h6 {
 .content {
   font-family: "Cuprum", sans-serif;
   font-weight: 400;
-  font-size: 2;
+  font-size: 2rem;
   color: hsl(0deg, 0%, 100%);
   margin-bottom: 1rem;
 }
@@ -13777,6 +13769,7 @@ img {
 .mtb {
   margin-left: 52rem;
   margin-top: 16rem;
+  color: hsl(0deg, 0%, 100%);
 }
 @media only screen and (max-width: 480px) {
   .mtb {
@@ -13785,6 +13778,18 @@ img {
     margin-right: 3rem;
     margin-top: 8rem;
   }
+  .mtb .h3-grid {
+    font-size: 2rem;
+    color: hsl(0deg, 0%, 100%);
+  }
+  .mtb .h5 {
+    font-size: 1rem;
+    color: hsl(0deg, 0%, 100%);
+  }
+}
+
+.padd {
+  padding: 3rem;
 }
 
 .container-selection-week {
