@@ -45,6 +45,22 @@ h2 {
     }
 }
 
+.h2-card {
+    @include mixins.set-font(variables.$ff, variables.$fw-regular, variables.$fs-lg, variables.$clr-white);
+    padding-top: 1rem;
+    padding-left: 4rem;
+    padding-bottom: 1rem;
+
+    @include media-queries.respond-to(media-queries.$phone) {
+        font-size: variables.$fs-xxxsm;
+        margin-right: 5rem;
+        padding-top: 1rem;
+        padding-left: 4rem;
+        padding-bottom: 1rem;
+
+    }
+}
+
 .red-h2 {
     color: variables.$clr-red;
 }

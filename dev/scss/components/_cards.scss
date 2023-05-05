@@ -2,49 +2,49 @@
 @use '../abstracts/mixins';
 @use '../vendor/media-queries';
 
-.container-selection-week{
+.container-selection-week {
     background: variables.$clr-dark-red-trans;
-    box-shadow: 25px 25px 50px 0 variables.$clr-dark-grey inset, -25px -25px 50px 0 variables.$clr-dark-grey inset; 
+    box-shadow: 25px 25px 50px 0 variables.$clr-dark-grey inset, -25px -25px 50px 0 variables.$clr-dark-grey inset;
 
 }
 
-.arrows{
+.arrows {
     width: 0%;
 }
 
-.featured-card{
-    padding: 1rem;   
-    margin-bottom: 2rem; 
+.featured-card {
+    padding: 1rem;
+    margin-bottom: 2rem;
 }
 
-.best-card{
-    @include mixins.btn(variables.$clr-light-grey, variables.$clr-light-grey, variables.$clr-dark);  
-    margin-bottom: 2rem; 
+.best-card {
+    @include mixins.btn(variables.$clr-light-grey, variables.$clr-light-grey, variables.$clr-dark);
+    margin-bottom: 2rem;
 }
 
-.card-recipe{
-    border-radius: 3rem; 
+.card-recipe {
+    border-radius: 3rem;
 }
 
-.best-recipes{
+.best-recipes {
     background: variables.$clr-light-grey;
     margin: 1rem;
-    
+
 }
 
 :hover.card-recipe.text {
     transition: all 0.3s ease;
     opacity: 1;
-    max-height:40px;
- }
+    max-height: 40px;
+}
 
-:hover.carousel-cell{
+:hover.carousel-cell {
     transform: scale(50%);
 
     background-color: variables.$clr-red;
 }
 
-:hover.ul{
+:hover.ul {
     visibility: collapse;
 }
 
@@ -56,12 +56,15 @@
 .container-grey-details {
     background: variables.$clr-light-grey;
     border-radius: 3rem;
-    margin-left: 3rem;
+    margin-left: 2rem;
 
     @include media-queries.respond-to(media-queries.$phone) {
         margin-left: 1rem;
     }
 }
 
-
-
+.card-text {
+    padding-top: 1rem;
+    padding-left: 4rem;
+    padding-bottom: 2rem;
+}

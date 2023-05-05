@@ -13440,6 +13440,25 @@ h2 {
   }
 }
 
+.h2-card {
+  font-family: "Cuprum", sans-serif;
+  font-weight: 400;
+  font-size: 4.375rem;
+  color: hsl(0deg, 0%, 100%);
+  padding-top: 1rem;
+  padding-left: 4rem;
+  padding-bottom: 1rem;
+}
+@media only screen and (max-width: 480px) {
+  .h2-card {
+    font-size: 0.75rem;
+    margin-right: 5rem;
+    padding-top: 1rem;
+    padding-left: 4rem;
+    padding-bottom: 1rem;
+  }
+}
+
 .red-h2 {
   color: hsl(354deg, 99%, 30%);
 }
@@ -13849,7 +13868,7 @@ img {
 }
 
 .container-img2 {
-  max-width: 20%;
+  max-width: 100%;
 }
 
 .container {
@@ -14020,12 +14039,18 @@ img {
 .container-grey-details {
   background: hsl(0deg, 0%, 28%);
   border-radius: 3rem;
-  margin-left: 3rem;
+  margin-left: 2rem;
 }
 @media only screen and (max-width: 480px) {
   .container-grey-details {
     margin-left: 1rem;
   }
+}
+
+.card-text {
+  padding-top: 1rem;
+  padding-left: 4rem;
+  padding-bottom: 2rem;
 }
 
 @media only screen and (max-width: 480px) {
