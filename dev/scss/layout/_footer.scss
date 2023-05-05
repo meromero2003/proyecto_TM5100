@@ -2,6 +2,11 @@
 @use '../abstracts/variables';
 @use '../abstracts/mixins';
 
-.footer {
-    background: variables.$clr-orange;
+.border-end {
+
+    @include media-queries.respond-to(media-queries.$phone) {
+        border-right: transparent!important;
+        border-bottom: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
+    }
+
 }

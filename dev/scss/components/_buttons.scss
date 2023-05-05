@@ -65,10 +65,8 @@
 
 .nav {
     color: variables.$clr-white;
-    margin-right: 3rem;
     @include media-queries.respond-to(media-queries.$phone) {
         font-size: variables.$fs-xxsm;
-        margin-right: 0;
     }
 }
 

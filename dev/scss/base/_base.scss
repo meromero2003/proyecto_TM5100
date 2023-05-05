@@ -52,10 +52,11 @@ h2 {
 h3 {
     @include mixins.set-font(variables.$ff, variables.$fw-regular, variables.$fs-med, variables.$clr-white);
     margin: auto;
+    margin-top: 1rem;
 
     @include media-queries.respond-to(media-queries.$phone) {
         margin-left: 1rem;
-        font-size: variables.$fs-xsm;
+        font-size: variables.$fs-xxsm;
         margin-right: 5rem;
     }
 }
@@ -73,7 +74,7 @@ h5 {
     @include mixins.set-font(variables.$ff, variables.$fw-regular, variables.$fs-xsm, variables.$clr-white);
     margin: 0.5rem 0 0;
     line-height: 3rem;
-    
+
     // @include media-queries.respond-to(media-queries.$phone) {
     //     font-size: variables.$fs-xxxsm;
     //     margin-right: 5rem;
@@ -84,10 +85,11 @@ h5 {
     @include mixins.set-font(variables.$ffs, variables.$fw-regular, variables.$fs-xxsm, variables.$clr-white);
     margin-top: 1rem;
     margin-bottom: 2rem;
+
 }
 
 h6 {
-    @include mixins.set-font(variables.$ffs, variables.$fw-regular, variables.$fs-xxxsm, variables.$clr-white);
+    @include mixins.set-font(variables.$ffs, variables.$fw-regular, variables.$fs-xxsm, variables.$clr-white);
     margin: 0.5rem 0 0;
     line-height: 3rem;
 
@@ -96,6 +98,20 @@ h6 {
         margin-right: 5rem;
     }
 }
+
+.h6-foot {
+
+    @include media-queries.respond-to(media-queries.$phone) {
+        margin: 0.5rem 0 0;
+        line-height: 3rem;
+        margin-left: 5rem;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+    }
+
+
+}
+
 
 
 

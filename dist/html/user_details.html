@@ -38,21 +38,14 @@
 
     <header>
 
-        <nav class="navbar navbar-expand-lg navbar-light bkg-red ">
-            <div class="container gap-3">
 
-                <!-- IDENTIDAD -->
+        <nav class="navbar navbar-expand-lg bkg-red">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
                 <a class="navbar-brand"> <img class="img-fluid w-50" src="../images/logo.png" alt="Logo">
                 </a>
-
-                <!-- hamburguesa responsive -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
-                    aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <!-- hamburguesa responsive -->
-
-                <!-- BUSCADOR -->
                 <form class="collapse navbar-collapse mx-auto border-bottom mt-5">
                     <div class="input-group ">
                         <button class="btn  search" type="button" id="button-addon1"><i
@@ -64,10 +57,7 @@
                     </div>
 
                 </form>
-
-                <!-- BOTONES -->
-
-                <div>
+                <div class="collapse navbar-collapse row m-nav " id="navbarTogglerDemo02">
                     <div class="collapse navbar-collapse justify-content-end m-4">
                         <div class="nav justify-content-center">
                             <button class="nav-orange-btn" href="login_user_v2.html">Iniciar Sesión</button>
@@ -83,10 +73,11 @@
                             <button class="nav-red-btn" href="#">Mi cuenta</button>
                         </div>
                     </div>
-                </div>
 
+                </div>
             </div>
         </nav>
+
 
     </header>
 
@@ -95,8 +86,7 @@
     <!--/////////////////////////////////////////Recetas//////////////////////////////////////////-->
     <section class="container">
 
-        <h3> Nuestra seleccion de la <span
-                class="red-h2">semana</span> para tí </h3>
+        <h3> Nuestra seleccion de la <span class="red-h2">semana</span> para tí </h3>
         <div class="row border-top">
 
             <!-- /////////////////////////////////FILTERS////////////////////////////////////////////// -->
@@ -111,8 +101,7 @@
 
                 <!-- //////////////////////////////////////////// -->
                 <div class="justify-content-center d-flex">
-                    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist"
-                        aria-orientation="vertical">
+                    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                         <button class="nav-link active border-bottom" id="v-pills-information-tab" data-bs-toggle="pill"
                             data-bs-target="#v-pills-information" type="button" role="tab"
                             aria-controls="v-pills-information" aria-selected="true">Informacion Personal</button>
@@ -297,7 +286,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                         </div>
 
                         <div class="tab-pane fade ps-5" id="v-pills-colections" role="tabpanel"
@@ -470,16 +459,16 @@
                             </div>
                         </div>
 
-                        <div class="tab-pane fade show active container-grey-details" id="v-pills-information" role="tabpanel" aria-labelledby="v-pills-information-tab"
-                            tabindex="0">
+                        <div class="tab-pane fade show active container-grey-details" id="v-pills-information"
+                            role="tabpanel" aria-labelledby="v-pills-information-tab" tabindex="0">
 
                             <form action="" method="" class="py-5">
 
-                                <div class="row justify-content-center">
+                                <div class="row d-flex justify-content-center gap-3 mx-5">
                                     <h3 class="px-5 h3-responisve">Mis detalles</h3>
+                                    
                                     <h5 class="border-bottom px-5 h5">Información Personal</h5>
-
-
+                                    
                                     <div class="mb-3 col-lg-9 col-md-9 col-sm-12">
                                         <label for="nombre" class="form-label label-responisve">Nombre</label>
                                         <input id="nombre" class="form-control" type="text" name="nombre"
@@ -488,16 +477,18 @@
 
                                     <div class="row col-lg-9 col-md-9 col-sm-12 p-0">
                                         <div class="col mb-3 col-lg-9 col-md-9 col-sm-12">
-                                            <label for="primerApellido" class="form-label label-responisve fw-bold">Primer
+                                            <label for="primerApellido"
+                                                class="form-label label-responisve fw-bold">Primer
                                                 Apellido</label>
-                                            <input id="primerApellido" class="form-control input-responisve" name="primerApellido"
-                                                type="text" placeholder="Primer Apellido">
+                                            <input id="primerApellido" class="form-control input-responisve"
+                                                name="primerApellido" type="text" placeholder="Primer Apellido">
                                         </div>
                                         <div class=" col mb-3 col-lg-9 col-md-9 col-sm-12">
-                                            <label for="segundoApellido" class="form-label label-responisve fw-bold">Segundo
+                                            <label for="segundoApellido"
+                                                class="form-label label-responisve fw-bold">Segundo
                                                 Apellido</label>
-                                            <input id="segundoApellido" class="form-control input-responisve" name="segundoApellido"
-                                                type="text" placeholder="Segundo Apellido">
+                                            <input id="segundoApellido" class="form-control input-responisve"
+                                                name="segundoApellido" type="text" placeholder="Segundo Apellido">
                                         </div>
                                     </div>
                                 </div>
@@ -508,18 +499,19 @@
                                         Registrarse
                                     </button>
 
-                                    
+
                                     <div class="row d-flex justify-content-center gap-3 mx-5">
                                         <h5 class="border-bottom px-5 h5">Correo Electrónico</h5>
 
                                         <div class="mb-3 col-lg-9 col-md-9 col-sm-12">
                                             <label for="email" class="form-label label-responisve">Email</label>
-                                            <input id="email" class="form-control input-responisve" type="text" name="email"
-                                                placeholder="Email">
+                                            <input id="email" class="form-control input-responisve" type="text"
+                                                name="email" placeholder="Email">
                                         </div>
 
                                         <div class="mb-3 col-lg-9 col-md-9 col-sm-12">
-                                            <label for="contraseña" class="form-label label-responisve">Contraseña</label>
+                                            <label for="contraseña"
+                                                class="form-label label-responisve">Contraseña</label>
                                             <input id="contraseña" class="form-control input-responisve" type="password"
                                                 name="contraseña" placeholder="Contraseña">
                                         </div>
@@ -531,184 +523,172 @@
                                     </button>
                             </form>
                         </div>
-                        </div>
+                    </div>
 
-                        <div class="tab-pane fade" id="v-pills-dislike" role="tabpanel"
-                            aria-labelledby="v-pills-dislike-tab" tabindex="0">
-                        
-                            <div class="col-lg-9 col-sm-12 container-grey-details">
-                                <div class="my-4 text-center">
-                                    <div class="row mx-auto gy-5">
+                    <div class="tab-pane fade" id="v-pills-dislike" role="tabpanel"
+                        aria-labelledby="v-pills-dislike-tab" tabindex="0">
 
-                                        <div class="col col-sm-12 col-lg-4 col-md-6 text-start">
+                        <div class="col-lg-9 col-sm-12 container-grey-details">
+                            <div class="my-4 text-center">
+                                <div class="row mx-auto gy-5">
 
-                                            <div class="card-recipe">
-                                                <img src="../images/best-recipe.jpg" class="card-img-top"
-                                                    alt="Pancakes">
-                                                <div class="card-body d-flex">
-                                                    <h4
-                                                        class="align-self-center flex-grow-1  mb-0 p-3 fw-bold fst-italic">
-                                                        Nombre de la receta</h4>
-                                                    <a class="align-self-center me-2 arrow-link" href="#">
-                                                        <i class="icon-link fa-solid fa-circle-chevron-right me-1"></i>
-                                                    </a>
-                                                </div>
-                                                <ul class="list-group list-group-flush">
-                                                    <p class="list-group-item p"><i
-                                                            class="fa-solid fa-clock me-3"></i>Prep. time
-                                                    </p>
-                                                    <p class="list-group-item p"><i
-                                                            class="fa-solid fa-utensils me-3"></i>Porciones
-                                                    </p>
-                                                    <p class="list-group-item p"><i
-                                                            class="fa-solid fa-square-check me-3"></i>Dificultad
-                                                    </p>
-                                                </ul>
+                                    <div class="col col-sm-12 col-lg-4 col-md-6 text-start">
+
+                                        <div class="card-recipe">
+                                            <img src="../images/best-recipe.jpg" class="card-img-top" alt="Pancakes">
+                                            <div class="card-body d-flex">
+                                                <h4 class="align-self-center flex-grow-1  mb-0 p-3 fw-bold fst-italic">
+                                                    Nombre de la receta</h4>
+                                                <a class="align-self-center me-2 arrow-link" href="#">
+                                                    <i class="icon-link fa-solid fa-circle-chevron-right me-1"></i>
+                                                </a>
                                             </div>
+                                            <ul class="list-group list-group-flush">
+                                                <p class="list-group-item p"><i class="fa-solid fa-clock me-3"></i>Prep.
+                                                    time
+                                                </p>
+                                                <p class="list-group-item p"><i
+                                                        class="fa-solid fa-utensils me-3"></i>Porciones
+                                                </p>
+                                                <p class="list-group-item p"><i
+                                                        class="fa-solid fa-square-check me-3"></i>Dificultad
+                                                </p>
+                                            </ul>
                                         </div>
-
-                                        <div class="col-sm-12 col-lg-4 col-md-6 text-start">
-                                            <div class="card-recipe">
-                                                <img src="../images/best-recipe.jpg" class="card-img-top"
-                                                    alt="Pancakes">
-                                                <div class="card-body d-flex">
-                                                    <h4
-                                                        class="align-self-center flex-grow-1  mb-0 p-3 fw-bold fst-italic">
-                                                        Nombre de la receta</h4>
-                                                    <a class="align-self-center me-2 arrow-link" href="#">
-                                                        <i class="icon-link fa-solid fa-circle-chevron-right me-1"></i>
-                                                    </a>
-                                                </div>
-                                                <ul class="list-group list-group-flush">
-                                                    <p class="list-group-item p"><i
-                                                            class="fa-solid fa-clock me-3"></i>Prep. time
-                                                    </p>
-                                                    <p class="list-group-item p"><i
-                                                            class="fa-solid fa-utensils me-3"></i>Porciones
-                                                    </p>
-                                                    <p class="list-group-item p"><i
-                                                            class="fa-solid fa-square-check me-3"></i>Dificultad
-                                                    </p>
-                                                </ul>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-sm-12 col-lg-4 col-md-6 text-start">
-                                            <div class="card-recipe">
-                                                <img src="../images/best-recipe.jpg" class="card-img-top"
-                                                    alt="Pancakes">
-                                                <div class="card-body d-flex">
-                                                    <h4
-                                                        class="align-self-center flex-grow-1  mb-0 p-3 fw-bold fst-italic">
-                                                        Nombre de la receta</h4>
-                                                    <a class="align-self-center me-2 arrow-link" href="#">
-                                                        <i class="icon-link fa-solid fa-circle-chevron-right me-1"></i>
-                                                    </a>
-                                                </div>
-                                                <ul class="list-group list-group-flush">
-                                                    <p class="list-group-item p"><i
-                                                            class="fa-solid fa-clock me-3"></i>Prep. time
-                                                    </p>
-                                                    <p class="list-group-item p"><i
-                                                            class="fa-solid fa-utensils me-3"></i>Porciones
-                                                    </p>
-                                                    <p class="list-group-item p"><i
-                                                            class="fa-solid fa-square-check me-3"></i>Dificultad
-                                                    </p>
-                                                </ul>
-                                            </div>
-                                        </div>
-
-                                        <hr style="color:white;width: 90%;margin-left: 2rem;">
-
-                                        <div class="col-sm-12 col-lg-4 col-md-6 text-start">
-                                            <div class="card-recipe">
-                                                <img src="../images/best-recipe.jpg" class="card-img-top"
-                                                    alt="Pancakes">
-                                                <div class="card-body d-flex">
-                                                    <h4
-                                                        class="align-self-center flex-grow-1  mb-0 p-3 fw-bold fst-italic">
-                                                        Nombre de la receta</h4>
-                                                    <a class="align-self-center me-2 arrow-link" href="#">
-                                                        <i class="icon-link fa-solid fa-circle-chevron-right me-1"></i>
-                                                    </a>
-                                                </div>
-                                                <ul class="list-group list-group-flush">
-                                                    <p class="list-group-item p"><i
-                                                            class="fa-solid fa-clock me-3"></i>Prep. time
-                                                    </p>
-                                                    <p class="list-group-item p"><i
-                                                            class="fa-solid fa-utensils me-3"></i>Porciones
-                                                    </p>
-                                                    <p class="list-group-item p"><i
-                                                            class="fa-solid fa-square-check me-3"></i>Dificultad
-                                                    </p>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-12 col-lg-4 col-md-6 text-start">
-                                            <div class="card-recipe">
-                                                <img src="../images/best-recipe.jpg" class="card-img-top"
-                                                    alt="Pancakes">
-                                                <div class="card-body d-flex">
-                                                    <h4
-                                                        class="align-self-center flex-grow-1  mb-0 p-3 fw-bold fst-italic">
-                                                        Nombre de la receta</h4>
-                                                    <a class="align-self-center me-2 arrow-link" href="#">
-                                                        <i class="icon-link fa-solid fa-circle-chevron-right me-1"></i>
-                                                    </a>
-                                                </div>
-                                                <ul class="list-group list-group-flush">
-                                                    <p class="list-group-item p"><i
-                                                            class="fa-solid fa-clock me-3"></i>Prep. time
-                                                    </p>
-                                                    <p class="list-group-item p"><i
-                                                            class="fa-solid fa-utensils me-3"></i>Porciones
-                                                    </p>
-                                                    <p class="list-group-item p"><i
-                                                            class="fa-solid fa-square-check me-3"></i>Dificultad
-                                                    </p>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-12 col-lg-4 col-md-6 text-start">
-                                            <div class="card-recipe">
-                                                <img src="../images/best-recipe.jpg" class="card-img-top"
-                                                    alt="Pancakes">
-                                                <div class="card-body d-flex">
-                                                    <h4
-                                                        class="align-self-center flex-grow-1  mb-0 p-3 fw-bold fst-italic">
-                                                        Nombre de la receta</h4>
-                                                    <a class="align-self-center me-2 arrow-link" href="#">
-                                                        <i class="icon-link fa-solid fa-circle-chevron-right me-1"></i>
-                                                    </a>
-                                                </div>
-                                                <ul class="list-group list-group-flush">
-                                                    <p class="list-group-item p"><i
-                                                            class="fa-solid fa-clock me-3"></i>Prep. time
-                                                    </p>
-                                                    <p class="list-group-item p"><i
-                                                            class="fa-solid fa-utensils me-3"></i>Porciones
-                                                    </p>
-                                                    <p class="list-group-item p"><i
-                                                            class="fa-solid fa-square-check me-3"></i>Dificultad
-                                                    </p>
-                                                </ul>
-                                            </div>
-                                        </div>
-
-
                                     </div>
+
+                                    <div class="col-sm-12 col-lg-4 col-md-6 text-start">
+                                        <div class="card-recipe">
+                                            <img src="../images/best-recipe.jpg" class="card-img-top" alt="Pancakes">
+                                            <div class="card-body d-flex">
+                                                <h4 class="align-self-center flex-grow-1  mb-0 p-3 fw-bold fst-italic">
+                                                    Nombre de la receta</h4>
+                                                <a class="align-self-center me-2 arrow-link" href="#">
+                                                    <i class="icon-link fa-solid fa-circle-chevron-right me-1"></i>
+                                                </a>
+                                            </div>
+                                            <ul class="list-group list-group-flush">
+                                                <p class="list-group-item p"><i class="fa-solid fa-clock me-3"></i>Prep.
+                                                    time
+                                                </p>
+                                                <p class="list-group-item p"><i
+                                                        class="fa-solid fa-utensils me-3"></i>Porciones
+                                                </p>
+                                                <p class="list-group-item p"><i
+                                                        class="fa-solid fa-square-check me-3"></i>Dificultad
+                                                </p>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-12 col-lg-4 col-md-6 text-start">
+                                        <div class="card-recipe">
+                                            <img src="../images/best-recipe.jpg" class="card-img-top" alt="Pancakes">
+                                            <div class="card-body d-flex">
+                                                <h4 class="align-self-center flex-grow-1  mb-0 p-3 fw-bold fst-italic">
+                                                    Nombre de la receta</h4>
+                                                <a class="align-self-center me-2 arrow-link" href="#">
+                                                    <i class="icon-link fa-solid fa-circle-chevron-right me-1"></i>
+                                                </a>
+                                            </div>
+                                            <ul class="list-group list-group-flush">
+                                                <p class="list-group-item p"><i class="fa-solid fa-clock me-3"></i>Prep.
+                                                    time
+                                                </p>
+                                                <p class="list-group-item p"><i
+                                                        class="fa-solid fa-utensils me-3"></i>Porciones
+                                                </p>
+                                                <p class="list-group-item p"><i
+                                                        class="fa-solid fa-square-check me-3"></i>Dificultad
+                                                </p>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <hr style="color:white;width: 90%;margin-left: 2rem;">
+
+                                    <div class="col-sm-12 col-lg-4 col-md-6 text-start">
+                                        <div class="card-recipe">
+                                            <img src="../images/best-recipe.jpg" class="card-img-top" alt="Pancakes">
+                                            <div class="card-body d-flex">
+                                                <h4 class="align-self-center flex-grow-1  mb-0 p-3 fw-bold fst-italic">
+                                                    Nombre de la receta</h4>
+                                                <a class="align-self-center me-2 arrow-link" href="#">
+                                                    <i class="icon-link fa-solid fa-circle-chevron-right me-1"></i>
+                                                </a>
+                                            </div>
+                                            <ul class="list-group list-group-flush">
+                                                <p class="list-group-item p"><i class="fa-solid fa-clock me-3"></i>Prep.
+                                                    time
+                                                </p>
+                                                <p class="list-group-item p"><i
+                                                        class="fa-solid fa-utensils me-3"></i>Porciones
+                                                </p>
+                                                <p class="list-group-item p"><i
+                                                        class="fa-solid fa-square-check me-3"></i>Dificultad
+                                                </p>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 col-lg-4 col-md-6 text-start">
+                                        <div class="card-recipe">
+                                            <img src="../images/best-recipe.jpg" class="card-img-top" alt="Pancakes">
+                                            <div class="card-body d-flex">
+                                                <h4 class="align-self-center flex-grow-1  mb-0 p-3 fw-bold fst-italic">
+                                                    Nombre de la receta</h4>
+                                                <a class="align-self-center me-2 arrow-link" href="#">
+                                                    <i class="icon-link fa-solid fa-circle-chevron-right me-1"></i>
+                                                </a>
+                                            </div>
+                                            <ul class="list-group list-group-flush">
+                                                <p class="list-group-item p"><i class="fa-solid fa-clock me-3"></i>Prep.
+                                                    time
+                                                </p>
+                                                <p class="list-group-item p"><i
+                                                        class="fa-solid fa-utensils me-3"></i>Porciones
+                                                </p>
+                                                <p class="list-group-item p"><i
+                                                        class="fa-solid fa-square-check me-3"></i>Dificultad
+                                                </p>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 col-lg-4 col-md-6 text-start">
+                                        <div class="card-recipe">
+                                            <img src="../images/best-recipe.jpg" class="card-img-top" alt="Pancakes">
+                                            <div class="card-body d-flex">
+                                                <h4 class="align-self-center flex-grow-1  mb-0 p-3 fw-bold fst-italic">
+                                                    Nombre de la receta</h4>
+                                                <a class="align-self-center me-2 arrow-link" href="#">
+                                                    <i class="icon-link fa-solid fa-circle-chevron-right me-1"></i>
+                                                </a>
+                                            </div>
+                                            <ul class="list-group list-group-flush">
+                                                <p class="list-group-item p"><i class="fa-solid fa-clock me-3"></i>Prep.
+                                                    time
+                                                </p>
+                                                <p class="list-group-item p"><i
+                                                        class="fa-solid fa-utensils me-3"></i>Porciones
+                                                </p>
+                                                <p class="list-group-item p"><i
+                                                        class="fa-solid fa-square-check me-3"></i>Dificultad
+                                                </p>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+
                                 </div>
                             </div>
-                        
                         </div>
+
                     </div>
                 </div>
-                <!-- ///////////////////////////////////////////// -->
+            </div>
+            <!-- ///////////////////////////////////////////// -->
 
 
-                <!-- <div class="accordion-item border-bottom">
+            <!-- <div class="accordion-item border-bottom">
                         <h5 class="accordion-header">
                             <button class="nav flex-column nav-pills me-3 " type="button" data-bs-toggle="collapse"
                                 data-bs-target="#flush-collapseOne" aria-expanded="false"
@@ -763,10 +743,10 @@
 
                 </div>
             </div> -->
-                <!-- /////////////////////////////////FILTERS////////////////////////////////////////////// -->
+            <!-- /////////////////////////////////FILTERS////////////////////////////////////////////// -->
 
 
-                <!-- <div class="col-lg-9 col-sm-12 container-selection-week">
+            <!-- <div class="col-lg-9 col-sm-12 container-selection-week">
                         <div class="my-4 text-center">
                             <div class="row mx-auto gy-5">
 
@@ -931,8 +911,8 @@
         <div class="container align-self-center">
 
             <div class="row mb-3 ">
-                <div class="col-lg-3 col-sm-6 my-4 border-end mx-auto d-block">
-                    <img src="../images/logo.png" style="width: 35%;" alt="Logo">
+                <div class="justify-content-center col-lg-3 col-sm-6 my-4 border-end mx-auto d-block">
+                    <img src="../images/logo.png" style="width: 35%; margin-left: 8rem;" class="" alt="Logo">
                 </div>
 
                 <div class="col-lg-3 col-sm-6 my-4 border-end text-center">
@@ -957,23 +937,11 @@
                 </div>
                 <div class="col-lg-3 col-sm-6 my-4 text-center">
 
-                    <!-- BUSCADOR -->
-                    <form class="d-flex mx-auto border-bottom mt-5">
-                        <div class="input-group ">
-                            <button class="btn  search" type="button" id="button-addon1"><i
-                                    class="fa-solid fa-magnifying-glass" style="color:white;"></i></button>
-                            <input type="text" class="form-control search" placeholder="Buscar..." aria-label="Buscar"
-                                aria-describedby="button-addon1">
-                        </div>
-                        <div>
-                        </div>
 
-                    </form>
-
-                    <h6>Privacy Policy | Terms of Use</h6>
-                    <h6>Interest Based ADS | DO NOT Sell my Info</h6>
-                    <h6>Copyrightt © 2021 Ángel</h6>
-                    <h5 class="orange">GRILL THRILLING</h5>
+                    <h6 class="h6-foot">Privacy Policy | Terms of Use</h6>
+                    <h6 class="h6-foot">Interest Based ADS | DO NOT Sell my Info</h6>
+                    <h6 class="h6-foot">Copyrightt © 2021 Ángel</h6>
+                    <h5 class="orange h5">GRILL THRILLING</h5>
                 </div>
             </div>
 

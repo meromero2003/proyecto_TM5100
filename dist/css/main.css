@@ -794,6 +794,8 @@ progress {
 .row > * {
   -ms-flex-negative: 0;
       flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
   padding-right: calc(var(--bs-gutter-x) * 0.5);
   padding-left: calc(var(--bs-gutter-x) * 0.5);
   margin-top: var(--bs-gutter-y);
@@ -13448,11 +13450,12 @@ h3 {
   font-size: 3.125rem;
   color: hsl(0deg, 0%, 100%);
   margin: auto;
+  margin-top: 1rem;
 }
 @media only screen and (max-width: 480px) {
   h3 {
     margin-left: 1rem;
-    font-size: 1.5rem;
+    font-size: 1rem;
     margin-right: 5rem;
   }
 }
@@ -13491,7 +13494,7 @@ h5 {
 h6 {
   font-family: "Lato", sans-serif;
   font-weight: 400;
-  font-size: 0.75rem;
+  font-size: 1rem;
   color: hsl(0deg, 0%, 100%);
   margin: 0.5rem 0 0;
   line-height: 3rem;
@@ -13500,6 +13503,16 @@ h6 {
   h6 {
     font-size: 0.75rem;
     margin-right: 5rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .h6-foot {
+    margin: 0.5rem 0 0;
+    line-height: 3rem;
+    margin-left: 5rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
   }
 }
 
@@ -13732,12 +13745,10 @@ img {
 
 .nav {
   color: hsl(0deg, 0%, 100%);
-  margin-right: 3rem;
 }
 @media only screen and (max-width: 480px) {
   .nav {
     font-size: 1rem;
-    margin-right: 0;
   }
 }
 
@@ -13928,6 +13939,14 @@ img {
   padding: 3rem;
 }
 
+.m-nav {
+  margin-right: 4rem;
+}
+
+.navbar-brand {
+  margin-left: 4rem;
+}
+
 .container-selection-week {
   background: hsla(354deg, 99%, 30%, 0.62);
   -webkit-box-shadow: 25px 25px 50px 0 hsl(0deg, 0%, 12%) inset, -25px -25px 50px 0 hsl(0deg, 0%, 12%) inset;
@@ -14009,8 +14028,11 @@ img {
   }
 }
 
-.footer {
-  background: hsl(35deg, 84%, 50%);
+@media only screen and (max-width: 480px) {
+  .border-end {
+    border-right: transparent !important;
+    border-bottom: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
+  }
 }
 
 .bkg-red {
