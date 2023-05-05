@@ -52,5 +52,15 @@
     background: variables.$clr-grey;
 }
 
+.container-grey-details {
+    background: variables.$clr-light-grey;
+    border-radius: 3rem;
+    margin-left: 3rem;
+
+    @include media-queries.respond-to(media-queries.$phone) {
+        margin-left: 1rem;
+    }
+}
+
 
 

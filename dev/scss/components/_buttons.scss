@@ -46,19 +46,82 @@
 }
 
 .form-control:valid {
-    background:  transparent;
+    background: transparent;
     color: beige;
-  }
+}
 
-.form-control::placeholder{
+.form-control::placeholder {
     color: beige;
 }
 
 .form-control:focus {
     border-color: variables.$clr-white;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 255, 255, 0.6);
-  }
+}
 
+.nav {
+    color: variables.$clr-white;
+    margin-right: 3rem;
+    @include media-queries.respond-to(media-queries.$phone) {
+        font-size: variables.$fs-xxsm;
+        margin-right: 0;
+    }
+}
 
+.nav-link {
 
+    @include mixins.btn(variables.$clr-orange, variables.$clr-orange, variables.$clr-orange);
+    @include mixins.set-font(variables.$ff, variables.$fw-regular, variables.$fs-xsm, variables.$clr-white);
 
+    color: variables.$clr-white;
+    background: variables.$clr-orange;
+    --bs-nav-link-hover-color: var(--bs-orange);
+
+    @include media-queries.respond-to(media-queries.$phone) {
+        font-size: variables.$fs-xxsm;
+    }
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
+
+    background: variables.$clr-trans;
+    color: variables.$clr-orange;
+    @include media-queries.respond-to(media-queries.$phone) {
+        font-size: variables.$fs-xxsm;
+    }
+}
+
+.nav-pills .nav-link {
+    border-radius: 0;
+    @include media-queries.respond-to(media-queries.$phone) {
+        font-size: variables.$fs-xxsm;
+    }
+}
+
+.tab-content{
+    @include media-queries.respond-to(media-queries.$phone) {
+        font-size: variables.$fs-sm;
+        margin: 0;
+
+        .h3-responisve {
+            font-size: variables.$fs-xsm;
+            color: variables.$clr-white;
+        }
+
+        .h5 {
+            font-size: variables.$fs-xxsm;
+            color: variables.$clr-white;
+        }
+
+        .label-responisve {
+            font-size: variables.$fs-xsm;
+            color: variables.$clr-white;
+        }
+
+        .input-responisve {
+            font-size: variables.$fs-xxsm;
+            color: variables.$clr-white;
+        }
+    }
+}
