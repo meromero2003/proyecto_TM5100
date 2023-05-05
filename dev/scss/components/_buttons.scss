@@ -30,6 +30,10 @@
     @include mixins.btn(variables.$clr-dark, variables.$clr-dark, variables.$clr-white);
     border-radius: 0.5rem;
     margin-top: 1rem;
+
+    @include media-queries.respond-to(media-queries.$phone) {
+        font-size: variables.$fs-xxsm;
+    }
 }
 
 .search {
@@ -115,12 +119,12 @@
         }
 
         .label-responisve {
-            font-size: variables.$fs-xsm;
+            font-size: variables.$fs-xxxsm;
             color: variables.$clr-white;
         }
 
         .input-responisve {
-            font-size: variables.$fs-xxsm;
+            font-size: variables.$fs-xxxsm;
             color: variables.$clr-white;
         }
     }

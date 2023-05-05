@@ -794,8 +794,6 @@ progress {
 .row > * {
   -ms-flex-negative: 0;
       flex-shrink: 0;
-  width: 100%;
-  max-width: 100%;
   padding-right: calc(var(--bs-gutter-x) * 0.5);
   padding-left: calc(var(--bs-gutter-x) * 0.5);
   margin-top: var(--bs-gutter-y);
@@ -13449,7 +13447,14 @@ h3 {
   font-weight: 400;
   font-size: 3.125rem;
   color: hsl(0deg, 0%, 100%);
-  margin: 1.5rem 0 0;
+  margin: auto;
+}
+@media only screen and (max-width: 480px) {
+  h3 {
+    margin-left: 1rem;
+    font-size: 1.5rem;
+    margin-right: 5rem;
+  }
 }
 
 h4 {
@@ -13675,6 +13680,11 @@ img {
     text-align: center;
   }
 }
+@media only screen and (max-width: 480px) {
+  .nav-orange-arrow-btn {
+    font-size: 1rem;
+  }
+}
 
 .search {
   border: none;
@@ -13802,11 +13812,11 @@ img {
     color: hsl(0deg, 0%, 100%);
   }
   .tab-content .label-responisve {
-    font-size: 1.5rem;
+    font-size: 0.75rem;
     color: hsl(0deg, 0%, 100%);
   }
   .tab-content .input-responisve {
-    font-size: 1rem;
+    font-size: 0.75rem;
     color: hsl(0deg, 0%, 100%);
   }
 }
