@@ -1,6 +1,18 @@
+@use '../vendor/media-queries';
+
+
 img {
     display: block;
     max-width: 100%;
+}
+
+.img-footer {
+    display: block;
+    max-width: 15%;
+    
+    @include media-queries.respond-to(media-queries.$phone) {
+        max-width: 100%;
+    }
 }
 
 .m-image{

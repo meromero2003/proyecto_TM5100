@@ -1,5 +1,23 @@
 @use '../abstracts/variables';
+@use '../vendor/media-queries';
+@use '../abstracts/mixins';
+
+
 
 .bkg-red{
     background: variables.$clr-red;
 }
+
+.navbar-brand{
+    @include media-queries.respond-to(media-queries.$phone) {
+        margin-left: 0rem;
+    }
+}
+
+.nav-link{
+    @include media-queries.respond-to(media-queries.$phone) {
+        @include mixins.set-font(variables.$ff, variables.$fw-regular, variables.$fs-xxxsm, variables.$clr-white);
+        padding: 0rem;
+    }
+}
+

@@ -13473,9 +13473,9 @@ h3 {
 }
 @media only screen and (max-width: 480px) {
   h3 {
-    margin-left: 1rem;
-    font-size: 1rem;
-    margin-right: 5rem;
+    margin-left: 0rem;
+    font-size: 1.5rem;
+    margin-right: 0rem;
   }
 }
 
@@ -13527,7 +13527,6 @@ h6 {
 
 @media only screen and (max-width: 480px) {
   .h6-foot {
-    margin: 0.5rem 0 0;
     line-height: 3rem;
     margin-left: 5rem;
     margin-top: 1rem;
@@ -13600,6 +13599,14 @@ img {
     text-align: center;
   }
 }
+@media only screen and (max-width: 480px) {
+  .nav-red-btn {
+    font-family: "Cuprum", sans-serif;
+    font-weight: 400;
+    font-size: 0.75rem;
+    color: hsl(0deg, 0%, 100%);
+  }
+}
 
 :hover.nav-red-btn {
   position: relative;
@@ -13648,6 +13655,7 @@ img {
   font-size: 1rem;
   color: hsl(0deg, 0%, 100%);
   border-radius: 4px;
+  margin: 1rem !important;
 }
 @media only screen and (max-width: 480px) {
   .nav-orange-btn {
@@ -13851,9 +13859,23 @@ img {
   }
 }
 
+.carousel-control-next-icon {
+  background: hsl(0deg, 0%, 100%);
+}
+
 img {
   display: block;
   max-width: 100%;
+}
+
+.img-footer {
+  display: block;
+  max-width: 15%;
+}
+@media only screen and (max-width: 480px) {
+  .img-footer {
+    max-width: 100%;
+  }
 }
 
 .m-image {
@@ -13883,13 +13905,6 @@ img {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
-@media only screen and (max-width: 480px) {
-  .row {
-    display: -ms-grid;
-    display: grid;
-  }
-}
-
 .col {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 0%;
@@ -13964,6 +13979,10 @@ img {
 
 .navbar-brand {
   margin-left: 4rem;
+}
+
+.mt-heather {
+  margin-top: 8rem;
 }
 
 .container-selection-week {
@@ -14055,13 +14074,29 @@ img {
 
 @media only screen and (max-width: 480px) {
   .border-end {
-    border-right: transparent !important;
+    border-right: none !important;
     border-bottom: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
   }
 }
 
 .bkg-red {
   background: hsl(354deg, 99%, 30%);
+}
+
+@media only screen and (max-width: 480px) {
+  .navbar-brand {
+    margin-left: 0rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .nav-link {
+    font-family: "Cuprum", sans-serif;
+    font-weight: 400;
+    font-size: 0.75rem;
+    color: hsl(0deg, 0%, 100%);
+    padding: 0rem;
+  }
 }
 
 .accordion-item {

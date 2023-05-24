@@ -14,7 +14,7 @@
 
 
     @include media-queries.respond-to(media-queries.$phone) {
-        display: grid;
+        
     }
 }
 
@@ -91,4 +91,8 @@
 
 .navbar-brand{
     margin-left: 4rem;
+}
+
+.mt-heather{
+    margin-top: 8rem;
 }

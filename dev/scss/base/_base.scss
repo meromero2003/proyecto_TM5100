@@ -71,9 +71,9 @@ h3 {
     margin-top: 1rem;
 
     @include media-queries.respond-to(media-queries.$phone) {
-        margin-left: 1rem;
-        font-size: variables.$fs-xxsm;
-        margin-right: 5rem;
+        margin-left: 0rem;
+        font-size: variables.$fs-xsm;
+        margin-right: 0rem;
     }
 }
 
@@ -118,7 +118,6 @@ h6 {
 .h6-foot {
 
     @include media-queries.respond-to(media-queries.$phone) {
-        margin: 0.5rem 0 0;
         line-height: 3rem;
         margin-left: 5rem;
         margin-top: 1rem;
