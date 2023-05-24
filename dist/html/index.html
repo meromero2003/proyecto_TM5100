@@ -50,9 +50,9 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse mt-5" id="navbarTogglerDemo02">
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
 
-                    <form class="d-flex" role="search">
+                    <form class="d-flex mt-heather" role="search">
                         <div class="input-group border-bottom mb-5 ">
                             <button class="btn search" type="button" id="button-addon1"><i
                                     class="fa-solid fa-magnifying-glass" style="color:white;"></i></button>
@@ -81,13 +81,10 @@
         </nav>
 
 
-        <!-- IMAGEN  -->
-        <div>
-            <img class="img-fluid w-100" src="../images/two-tortillas.png" alt="Tortillas">
-        </div>
     </header>
 
     <!--/////////////////////////////////HEADER////////////////////////////////////-->
+
 
 
     <!--/////////////////////////////////TOP 10////////////////////////////////////-->
@@ -256,7 +253,7 @@
     <!--/////////////////////////////////TOP 10////////////////////////////////////-->
 
     <!--/////////////////////////////////////////Recetas//////////////////////////////////////////-->
-    <section class="container">
+    <section id="app" class="container">
 
         <h2 class="mx-auto mb-3 display-4 fw-bold fst-italic display-5 "> Nuestra seleccion de la <span
                 class="red-h2">semana</span> para tí </h2>
@@ -282,18 +279,10 @@
                         <div id="flush-collapseOne" class="accordion-collapse collapse"
                             data-bs-parent="#accordionFlushExample">
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item"><a class="list-link" href="#"><i
-                                            class="fa-solid fa-egg me-3"></i>Desayunos</a> </li>
-                                <li class="list-group-item"><a class="list-link" href="#"><i
-                                            class="fa-solid fa-glass-water me-3"></i>Bebidas</a></li>
-                                <li class="list-group-item"><a class="list-link" href="#"><i
-                                            class="fa-solid fa-bell-concierge me-3"></i>Entradas</a></li>
-                                <li class="list-group-item"><a class="list-link" href="#"><i
-                                            class="fa-solid fa-utensils me-3"></i>Almuerzos</a></li>
-                                <li class="list-group-item"><a class="list-link" href="#"><i
-                                            class="fa-solid fa-ice-cream me-3"></i>Postres</a></li>
-                                <li class="list-group-item"><a class="list-link" href="#"><i
-                                            class="fa-solid fa-bowl-food me-3"></i>Sopas</a></li>
+                                <li v-for="(category, index) in categories" class="nav-item">
+                                    <recipe-category-button :name="category.name"
+                                        v-on:selectedcategory="onClickSelectedCategory"> </recipe-category-button>
+                                </li>
                             </ul>
 
                         </div>
@@ -568,9 +557,26 @@
 
 <!-- VueJS -->
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script src="https://unpkg.com/mitt/dist/mitt.umd.js"></script>
 
 <!-- VueJS -->
 
+<!-- AXIOS API JS -->
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<!-- AXIOS API JS-->
+
+
+<!-- main script -->
+<script src="../js/component.js"></script>
+
+<!-- <script src="./js/components/ClickCounter.js"></script> -->
+
+<script src="../js/components/RecipeCategory.js"></script>
+
+<script>
+    const mountedApp = app.mount("#app");
+</script>
 
 </body>
 
