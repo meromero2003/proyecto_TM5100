@@ -7,6 +7,9 @@
 .bkg-red{
     background: variables.$clr-red;
 }
+.bkg-grey{
+    background: variables.$clr-dark-grey;
+}
 
 .navbar-brand{
     @include media-queries.respond-to(media-queries.$phone) {

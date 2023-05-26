@@ -61,10 +61,11 @@ app.component('recipe-card', {
         `<div class="card-recipe">
             <img v-bind:src="image" class="card-img-top" alt="featured-recipe">
             <div class="card-body d-flex">
-                <h4 class="align-self-center flex-grow-1  mb-0 p-3 fw-bold fst-italic">
-                    {{nombre}}</h4>
-                <a class="align-self-center me-2 arrow-link" href="./recipe_details.html">
-                    <i class="icon-link fa-solid fa-circle-chevron-right me-1"></i>
+                <h5 class="align-self-center flex-grow-1  mb-0 p-3 fw-bold fst-italic">
+                    {{name}}</h5>
+                <a class="align-self-center me-2 arrow-link" >
+                    <i class="icon-link fa-solid fa-circle-chevron-right me-1" v-on:click="onClickViewRecipe()" data-bs-toggle="modal"
+                    data-bs-target="#staticBackdrop"></i>
                 </a>
             </div>
 
