@@ -42,7 +42,7 @@ const app = Vue.createApp({
             .then(
                 (response) => {
                     let items = response.data.meals;
-                    console.log(items);
+                    // console.log(items);
 
                     this.recipes = [];
 
@@ -92,7 +92,7 @@ const app = Vue.createApp({
                 .then(
                     (response) => {
                         let item = response.data.meals;
-                        console.log(item);
+                        // console.log(item);
 
                         this.recipe.id= item[0].idMeal;
                         this.recipe.image= item[0].strMealThumb;
@@ -100,6 +100,7 @@ const app = Vue.createApp({
                         this.recipe.category= item[0].strCategory;
                         this.recipe.time= "20 mins";
                         this.recipe.level= "esary";
+                        this.recipes.likes= 18;
                         this.recipe.time= 20;
                         this.recipe.instructions= item[0].strInstructions;
 
@@ -111,12 +112,22 @@ const app = Vue.createApp({
                         }
 
                         this.recipe.ingredients= ingredientsList;
+                        console.log(this.recipe.ingredients);
                         
                     }
                 )
                 .catch(
                     error => console.log(error)
                 );
+        },
+
+        onClickRecipeLike(index) {
+            this.recipes[index].likes += 1;
+            
+        },
+
+        onClickRecipeDislike(index) {
+            if (this.recipes[index].likes > 0) this.recipes[index].likes -= 1;
         },
 
         onClickPrevRecipe(index) {
@@ -133,23 +144,7 @@ const app = Vue.createApp({
             }
         },
         onClickSelectedCategory(category) {
-            //     if (category == "All") {
-            //         this.recipes = this.all_recipes;
-            //     } else {
-            //         this.recipes = this.all_recipes;
-            //         let recipesInCategory = this.recipes.filter(function (element) {
-            //             return element.category === category;
-            //         });
-            //         // console.log("filtered ->" + recipesInCategory.length)
-            //         if (recipesInCategory.length > 0) {
-            //             this.hasRecipes = true;
-            //             this.recipes = recipesInCategory;
-            //             //rendering condisional. mostrar u ocultar ciertas secciones dependiendo de una variable booleana
-            //         } else {
-            //             this.hasRecipes = false;
-            //         }
-
-            //     }
+           
 
             axios({
                 // GET ALL RECIPES BY CATEGORY FROM API

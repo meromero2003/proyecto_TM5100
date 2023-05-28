@@ -33,7 +33,7 @@
     <title>Gill Thrilling - Register</title>
 </head>
 
-<body>
+<body id="app">
 
     <div class="container-fluid container-img p-0 m-0 position-relative">
         <img src="../images/dish1.png" class="position-absolute container-img" alt="Background">
@@ -48,40 +48,41 @@
 
                         <div class="mb-3 col-lg-9 col-md-9 col-sm-12">
                             <label for="nombre" class="form-label">Nombre</label>
-                            <input id="nombre" class="form-control" type="text" name="nombre" placeholder="Nombre">
+                            <input id="nombre" class="form-control" type="text" name="nombre" placeholder="Nombre" required>
                         </div>
                         
                         <div class="row col-lg-9 col-md-9 col-sm-12 p-0">
                             <div class="col mb-3 col-lg-9 col-md-9 col-sm-12">
                                 <label for="primerApellido" class="form-label fw-bold">Primer Apellido</label>
                                 <input id="primerApellido" class="form-control" name="primerApellido" type="text"
-                                    placeholder="Primer Apellido">
+                                    placeholder="Primer Apellido" required>
                             </div>
                             <div class=" col mb-3 col-lg-9 col-md-9 col-sm-12">
                                 <label for="segundoApellido" class="form-label fw-bold">Segundo Apellido</label>
                                 <input id="segundoApellido" class="form-control" name="segundoApellido" type="text"
-                                    placeholder="Segundo Apellido">
+                                    placeholder="Segundo Apellido" required>
                             </div>
                         </div>
 
                         <div class="mb-3 col-lg-9 col-md-9 col-sm-12">
                             <label for="email" class="form-label">Email</label>
-                            <input id="email" class="form-control" type="text" name="email" placeholder="Email">
+                            <input id="email" class="form-control" type="text" name="email" placeholder="Email" required>
                         </div>
 
                         <div class="mb-3 col-lg-9 col-md-9 col-sm-12">
                             <label for="usuario" class="form-label">Usuario</label>
-                            <input id="usuario" class="form-control" type="text" name="usuario" placeholder="Usuario">
+                            <input id="usuario" class="form-control" type="text" name="usuario" placeholder="Usuario" required>
                         </div>
 
                         <div class="mb-3 col-lg-9 col-md-9 col-sm-12">
                             <label for="contraseña" class="form-label">Contraseña</label>
-                            <input id="contraseña" class="form-control" type="password" name="contraseña" placeholder="Contraseña">
+                            <input id="contraseña" class="form-control" type="password" name="contraseña" placeholder="Contraseña" required>
                         </div>
                         
 
                     </div>
-                    <button class="nav-orange-btn mx-auto fw-bold d-flex justify-content-center mt-4 mb-3">
+                    <register></register>
+                    <button type="submit" class="nav-orange-btn mx-auto fw-bold d-flex justify-content-center mt-4 mb-3" data-bs-toggle="modal" data-bs-target="#modalRegister">
                         Registrarse
                     </button>
                     <p class=" text-center text-content">Al unirte, acepta los <span> <a class="text-link" >Términos y Politica de privacidad</a></span></p>
@@ -96,7 +97,35 @@
     </div>
 
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+<!--Flickity-->
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 
+<!-- VueJS -->
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script src="https://unpkg.com/mitt/dist/mitt.umd.js"></script>
+
+<!-- VueJS -->
+
+<!-- AXIOS API JS -->
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<!-- AXIOS API JS-->
+
+
+<!-- main script -->
+<script src="../js/component.js"></script>
+
+<!-- <script src="./js/components/ClickCounter.js"></script> -->
+
+
+<script src="../js/components/Register.js"></script>
+
+<script>
+    const mountedApp = app.mount("#app");
+</script>
 
 
 </body>

@@ -18,11 +18,22 @@ app.component('recipe-details', {
         },
         instructions: {
             type: String,
-        }
+        },
+        likes: {
+            type: Number,
+            default: 10
+        },
+        
     },
 
     // comunicacion entre componentes para hacer comunicacion directa, Sirve para mostrar info, comunicar informacion ya definida.
     // no involucra modificaciones (estas se hacen en component.js)
+
+    data() {
+        return {
+            addLikes: this.likes
+        }
+    },
 
     methods: {
         onClickPrev() {
@@ -30,24 +41,29 @@ app.component('recipe-details', {
         },
         onClickNext() {
             this.$emit('nextrecipe', this.index)
-        }
+        },
+
+        onClickLike() {
+            this.addLikes++;
+        },
+        onClickDislike() {
+            if(this.addLikes>0) this.addLikes--;
+
+        },
     },
 
     template:
         /*html*/
         `
-        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        <div class="modal fade" id="modalDetails" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog modal-xl">
 
                 <div class="modal-content bkg-grey">
-                
-                    <div class="modal-header">
-                    </div>
-                    
+              
                     <div class="modal-body">
                     <!--/////////////////////////////////RECIPE////////////////////////////////////-->
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
 
                             <div class="mb-3 bkg-red border-top">
                             <div class="row g-0">
@@ -63,11 +79,14 @@ app.component('recipe-details', {
                                 </div>
                                 <div class="col-md-4 container-xxl my-4 me-3">
                                 <img v-bind:src="image" class="card-img-top" alt="featured-recipe">                                    <div class="row mt-3">
-                                        <button type="button" class="col btn btn-outline-warning">
-                                            <i class="fa fa-thumbs-up"><span class="fs-6">3478</span></i>
+                                        <button type="button" class="col btn btn-outline-warning" disabled>
+                                            <i><span class="fs-6">{{this.addLikes}}</span></i>
                                         </button>
-                                        <button type="button" class="col btn btn-outline-warning">
-                                            <i class="fa fa-thumbs-down"><span class="fs-6">9987</span></i>
+                                        <button type="button" class="col btn btn-outline-warning" v-on:click="onClickLike()">
+                                            <i class="fa fa-thumbs-up"><span class="fs-6"></span></i>
+                                        </button>
+                                        <button type="button" class="col btn btn-outline-warning" v-on:click="onClickDislike()">
+                                            <i class="fa fa-thumbs-down"><span class="fs-6"></span></i>
                                         </button>
 
                                         <button type="button" class="col btn btn-outline-warning">
@@ -105,6 +124,7 @@ app.component('recipe-details', {
                                     <div class=" mx-auto gy-5">
 
                                         <div class="row ">
+                                        
                                             <li class="list-group-item col-6 col-sm-3">
                                                 <input class="form-check-input me-1" type="checkbox" value="" id="firstCheckbox">
                                                 <label class="form-check-label" for="firstCheckbox">{{ingredients}}</label>
@@ -144,7 +164,8 @@ app.component('recipe-details', {
                     </div>
                 </div>
             </div>
-        </div>`
+        </div>
+        `
 })
 
 

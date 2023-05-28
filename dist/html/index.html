@@ -63,8 +63,8 @@
 
                     <div class="navbar-nav mb-2 row">
                         <div class="nav-item d-grid gap-2 d-md-flex justify-content-md-end mb-3">
-                            <button class="nav-orange-btn" href="user_details.html">Iniciar Sesión</button>
-                            <button class="nav-orange-btn" href="register.html">Registrarse</button>
+                            <button type="button" class="nav-orange-btn" href="./login.html">Iniciar Sesión</button>
+                            <button type="button" class="nav-orange-btn" href="./register.html">Registrarse</button>
                         </div>
 
                         <div class="nav-item d-flex justify-content-end">
@@ -279,8 +279,8 @@
                             data-bs-parent="#accordionFlushExample">
                             <ul class="list-group list-group-flush">
                                 <li v-for="(category, index) in categories" class="nav-item">
-                                    <recipe-category-button :name="category.name"
-                                        v-on:selectedcategory="onClickSelectedCategory"> </recipe-category-button>
+                                    <recipe-category :name="category.name"
+                                        v-on:selectedcategory="onClickSelectedCategory"> </recipe-category>
                                 </li>
                             </ul>
 
@@ -369,15 +369,14 @@
                         <div class="row mt-4">
                             <recipe-details :image="recipe.image" :name="recipe.name" :ingredients="recipe.ingredients"
                                 :instructions="recipe.instructions" v-on:prevrecipe="onClickPrevRecipe"
-                                v-on:nextrecipe="onClickNextRecipe"></recipe-details>
+                                v-on:nextrecipe="onClickNextRecipe" v-on:recipelike="onClickRecipeLike"
+                                v-on:recipedislike="onClickRecipeDislike"></recipe-details>
 
 
                             <div v-for="(item, index) in recipes" class="col-lg-4  text-start">
                                 <recipe-card :image="item.image" :category="item.category" :name="item.name"
                                     :description="item.instructions" :time="item.time" :level="item.level"
-                                    :likes="item.likes" :index="item.id" v-on:recipelike="onClickRecipeLike"
-                                    v-on:recipedislike="onClickRecipeDislike"
-                                    v-on:recipedetails="onClickRecipeDetails"></recipe-card>
+                                    :index="item.id" v-on:recipedetails="onClickRecipeDetails"></recipe-card>
                                 <hr style="color:white;width: 90%;margin-left: 2rem;">
                             </div>
                         </div>
@@ -405,8 +404,8 @@
                     <h5 class="fw-bold mb-3"><a href="#" class="text-light footer-link">Inicio</a></h5>
                     <ul class="list-unstyled">
                         <h5 class="mb-3"><a href="#" class="text-light footer-link">Mi Usuario</a></h5>
-                        <h5 class="mb-3"><a href="#" class="text-light footer-link">Iniciar Sesión</a></h5>
-                        <h5 class=""><a href="#" class="text-light footer-link">Registrarse</a></h5>
+                        <h5 class="mb-3"><a href="./login.html" class="text-light footer-link">Iniciar Sesión</a></h5>
+                        <h5 class=""><a href="./register.html" class="text-light footer-link">Registrarse</a></h5>
                     </ul>
                 </div>
 

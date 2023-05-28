@@ -65,7 +65,7 @@ app.component('recipe-card', {
                     {{name}}</h5>
                 <a class="align-self-center me-2 arrow-link" >
                     <i class="icon-link fa-solid fa-circle-chevron-right me-1" v-on:click="onClickViewRecipe()" data-bs-toggle="modal"
-                    data-bs-target="#staticBackdrop"></i>
+                    data-bs-target="#modalDetails"></i>
                 </a>
             </div>
 
