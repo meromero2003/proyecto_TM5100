@@ -55,7 +55,7 @@ const app = Vue.createApp({
                             name: element.strMeal,
                             category: 'Seafood',
                             time: "20 mins",
-                            level: "easy",
+                            level: "Easy",
                             likes: 18,
                             ingredients: "NA",
                             instructions: "NA",
@@ -99,7 +99,7 @@ const app = Vue.createApp({
                         this.recipe.name= item[0].strMeal;
                         this.recipe.category= item[0].strCategory;
                         this.recipe.time= "20 mins";
-                        this.recipe.level= "esary";
+                        this.recipe.level= "Easy";
                         this.recipes.likes= 18;
                         this.recipe.time= 20;
                         this.recipe.instructions= item[0].strInstructions;
@@ -164,7 +164,7 @@ const app = Vue.createApp({
                                 name: element.strMeal,
                                 category: category,
                                 time: "20 mins",
-                                level: "easy",
+                                level: "Easy",
                                 likes: 18,
                                 ingredients: "NA",
                                 instructions: "NA",

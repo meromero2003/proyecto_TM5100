@@ -94,7 +94,7 @@
 
         <div class="main-carousel mb-3  container text-center" data-flickity='{ "cellAlign": "left", "contain": true }'>
 
-            <div class="carousel-cell  col col-sm-12 col-lg-4 col-md-6 text-start best-recipes">
+            <div class="carousel-cell col-sm-12 col-lg-4 col-md-6 text-start best-recipes">
                 <div class="card-recipe text-start">
                     <img src="../images/best-recipe.jpg" class="card-img-top m-image" alt="Pancakes">
                     <div class="card-body d-flex">
@@ -367,7 +367,7 @@
 
 
                         <div class="row mt-4">
-                            <recipe-details :image="recipe.image" :name="recipe.name" :ingredients="recipe.ingredients"
+                            <recipe-details :image="recipe.image" :name="recipe.name" :category="recipe.category" :llevel="recipe.level" :time="recipe.time" :level="recipe.level" :ingredients="recipe.ingredients"
                                 :instructions="recipe.instructions" v-on:prevrecipe="onClickPrevRecipe"
                                 v-on:nextrecipe="onClickNextRecipe" v-on:recipelike="onClickRecipeLike"
                                 v-on:recipedislike="onClickRecipeDislike"></recipe-details>
