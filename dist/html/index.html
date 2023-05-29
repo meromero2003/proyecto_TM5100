@@ -354,10 +354,11 @@
                             <!-- BUSCADOR -->
                             <form class="d-flex mx-auto border-bottom mt-5">
                                 <div class="input-group ">
-                                    <button class="btn  search" type="button" id="button-addon1"><i
-                                            class="fa-solid fa-magnifying-glass" style="color:white;"></i></button>
-                                    <input type="text" class="form-control search" placeholder="Buscar..."
-                                        aria-label="Buscar" aria-describedby="button-addon1">
+                                    
+                                    <search-btn v-on:click="onClickSelectedKeyWord"></search-btn>
+                                    
+                                    <input type="text" class="form-control search" v-model="keyWord" id="recipeword" placeholder="Buscar..."
+                                    aria-label="Buscar" aria-describedby="search">
                                 </div>
                                 <div>
                                 </div>
@@ -463,6 +464,7 @@
 <script src="../js/components/RecipeCategory.js"></script>
 <script src="../js/components/RecipeCard.js"></script>
 <script src="../js/components/RecipeDetails.js"></script>
+<script src="../js/components/Search-btn.js"></script>
 
 <script>
     const mountedApp = app.mount("#app");

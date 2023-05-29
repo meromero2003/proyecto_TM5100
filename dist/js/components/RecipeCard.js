@@ -31,7 +31,8 @@ app.component('recipe-card', {
         },
         index: {
             type: String
-        }
+        },
+        
     },
     data() {
         return {

@@ -1,8 +1,9 @@
 app.component('recipe-details', {
-    // nombre compuesto click counter unido con un guion
+
     data() {
         return {
             counter: 0,
+            search:""
         }
     },
 
