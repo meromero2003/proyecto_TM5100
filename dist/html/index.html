@@ -65,8 +65,9 @@
 
                     <div class="navbar-nav mb-2 row">
                         <div class="nav-item d-grid gap-2 d-md-flex justify-content-md-end mb-3">
-                            <button type="button" class="nav-orange-btn" href="./login.html">Iniciar Sesión</button>
-                            <button type="button" class="nav-orange-btn" href="./register.html">Registrarse</button>
+                            <button class="btn-trans" ><a class="nav-orange-btn" href="./login.html">Iniciar Sesión</a></button>
+                            <button class="btn-trans"><a class="nav-orange-btn" href="./register.html">Registrarse</a></button>
+
                         </div>
 
                         <div class="nav-item d-flex justify-content-end">
@@ -99,57 +100,66 @@
             data-flickity='{ "cellAlign": "left", "contain": true }'>
 
             <div class="carousel-cell col-sm-12 col-lg-4 col-md-6 text-start best-recipes">
-                <recipe-card v-if="topRecipes.length>0" :image="topRecipes[1].image" :category="topRecipes[1].category" :name="topRecipes[1].name"
-                    :description="topRecipes[1].instructions" :time="topRecipes[1].time" :level="topRecipes[1].level" :index="topRecipes[1].id"
+                <recipe-card v-if="topRecipes.length>0" :image="topRecipes[1].image" :category="topRecipes[1].category"
+                    :name="topRecipes[1].name" :description="topRecipes[1].instructions" :time="topRecipes[1].time"
+                    :level="topRecipes[1].level" :index="topRecipes[1].id"
                     v-on:recipedetails="onClickRecipeDetails"></recipe-card>
             </div>
 
             <div class="carousel-cell col-sm-12 col-lg-4 col-md-6 text-start best-recipes">
-                <recipe-card v-if="topRecipes.length>0" :image="topRecipes[2].image" :category="topRecipes[2].category" :name="topRecipes[2].name"
-                    :description="topRecipes[2].instructions" :time="topRecipes[2].time" :level="topRecipes[2].level" :index="topRecipes[2].id"
+                <recipe-card v-if="topRecipes.length>0" :image="topRecipes[2].image" :category="topRecipes[2].category"
+                    :name="topRecipes[2].name" :description="topRecipes[2].instructions" :time="topRecipes[2].time"
+                    :level="topRecipes[2].level" :index="topRecipes[2].id"
                     v-on:recipedetails="onClickRecipeDetails"></recipe-card>
             </div>
 
             <div class="carousel-cell col-sm-12 col-lg-4 col-md-6 text-start best-recipes">
-                <recipe-card v-if="topRecipes.length>0" :image="topRecipes[3].image" :category="topRecipes[3].category" :name="topRecipes[3].name"
-                    :description="topRecipes[3].instructions" :time="topRecipes[3].time" :level="topRecipes[3].level" :index="topRecipes[3].id"
+                <recipe-card v-if="topRecipes.length>0" :image="topRecipes[3].image" :category="topRecipes[3].category"
+                    :name="topRecipes[3].name" :description="topRecipes[3].instructions" :time="topRecipes[3].time"
+                    :level="topRecipes[3].level" :index="topRecipes[3].id"
                     v-on:recipedetails="onClickRecipeDetails"></recipe-card>
             </div>
 
             <div class="carousel-cell col-sm-12 col-lg-4 col-md-6 text-start best-recipes">
-                <recipe-card v-if="topRecipes.length>0" :image="topRecipes[4].image" :category="topRecipes[4].category" :name="topRecipes[4].name"
-                    :description="topRecipes[4].instructions" :time="topRecipes[4].time" :level="topRecipes[4].level" :index="topRecipes[4].id"
-                    v-on:recipedetails="onClickRecipeDetails"></recipe-card>
-            </div>
-            
-            <div class="carousel-cell col-sm-12 col-lg-4 col-md-6 text-start best-recipes">
-                <recipe-card v-if="topRecipes.length>0" :image="topRecipes[5].image" :category="topRecipes[5].category" :name="topRecipes[5].name"
-                    :description="topRecipes[5].instructions" :time="topRecipes[5].time" :level="topRecipes[5].level" :index="topRecipes[5].id"
+                <recipe-card v-if="topRecipes.length>0" :image="topRecipes[4].image" :category="topRecipes[4].category"
+                    :name="topRecipes[4].name" :description="topRecipes[4].instructions" :time="topRecipes[4].time"
+                    :level="topRecipes[4].level" :index="topRecipes[4].id"
                     v-on:recipedetails="onClickRecipeDetails"></recipe-card>
             </div>
 
             <div class="carousel-cell col-sm-12 col-lg-4 col-md-6 text-start best-recipes">
-                <recipe-card v-if="topRecipes.length>0" :image="topRecipes[6].image" :category="topRecipes[6].category" :name="topRecipes[6].name"
-                    :description="topRecipes[6].instructions" :time="topRecipes[6].time" :level="topRecipes[6].level" :index="topRecipes[6].id"
+                <recipe-card v-if="topRecipes.length>0" :image="topRecipes[5].image" :category="topRecipes[5].category"
+                    :name="topRecipes[5].name" :description="topRecipes[5].instructions" :time="topRecipes[5].time"
+                    :level="topRecipes[5].level" :index="topRecipes[5].id"
                     v-on:recipedetails="onClickRecipeDetails"></recipe-card>
             </div>
 
             <div class="carousel-cell col-sm-12 col-lg-4 col-md-6 text-start best-recipes">
-                <recipe-card v-if="topRecipes.length>0" :image="topRecipes[7].image" :category="topRecipes[7].category" :name="topRecipes[7].name"
-                    :description="topRecipes[7].instructions" :time="topRecipes[7].time" :level="topRecipes[7].level" :index="topRecipes[7].id"
+                <recipe-card v-if="topRecipes.length>0" :image="topRecipes[6].image" :category="topRecipes[6].category"
+                    :name="topRecipes[6].name" :description="topRecipes[6].instructions" :time="topRecipes[6].time"
+                    :level="topRecipes[6].level" :index="topRecipes[6].id"
+                    v-on:recipedetails="onClickRecipeDetails"></recipe-card>
+            </div>
+
+            <div class="carousel-cell col-sm-12 col-lg-4 col-md-6 text-start best-recipes">
+                <recipe-card v-if="topRecipes.length>0" :image="topRecipes[7].image" :category="topRecipes[7].category"
+                    :name="topRecipes[7].name" :description="topRecipes[7].instructions" :time="topRecipes[7].time"
+                    :level="topRecipes[7].level" :index="topRecipes[7].id"
                     v-on:recipedetails="onClickRecipeDetails"></recipe-card>
             </div>
             <div class="carousel-cell col-sm-12 col-lg-4 col-md-6 text-start best-recipes">
-                <recipe-card v-if="topRecipes.length>0" :image="topRecipes[8].image" :category="topRecipes[8].category" :name="topRecipes[8].name"
-                    :description="topRecipes[8].instructions" :time="topRecipes[8].time" :level="topRecipes[8].level" :index="topRecipes[8].id"
+                <recipe-card v-if="topRecipes.length>0" :image="topRecipes[8].image" :category="topRecipes[8].category"
+                    :name="topRecipes[8].name" :description="topRecipes[8].instructions" :time="topRecipes[8].time"
+                    :level="topRecipes[8].level" :index="topRecipes[8].id"
                     v-on:recipedetails="onClickRecipeDetails"></recipe-card>
             </div>
             <div class="carousel-cell col-sm-12 col-lg-4 col-md-6 text-start best-recipes">
-                <recipe-card v-if="topRecipes.length>0" :image="topRecipes[9].image" :category="topRecipes[9].category" :name="topRecipes[9].name"
-                    :description="topRecipes[9].instructions" :time="topRecipes[9].time" :level="topRecipes[9].level" :index="topRecipes[9].id"
+                <recipe-card v-if="topRecipes.length>0" :image="topRecipes[9].image" :category="topRecipes[9].category"
+                    :name="topRecipes[9].name" :description="topRecipes[9].instructions" :time="topRecipes[9].time"
+                    :level="topRecipes[9].level" :index="topRecipes[9].id"
                     v-on:recipedetails="onClickRecipeDetails"></recipe-card>
             </div>
-            
+
 
 
 
@@ -283,6 +293,7 @@
 
 
                             <div v-for="(item, index) in recipes" class="col-lg-4  text-start">
+                                <save :name="item.name"></save>
                                 <recipe-card :image="item.image" :category="item.category" :name="item.name"
                                     :description="item.instructions" :time="item.time" :level="item.level"
                                     :index="item.id" v-on:recipedetails="onClickRecipeDetails"></recipe-card>
@@ -369,6 +380,7 @@
     <script src="../js/components/RecipeCard.js"></script>
     <script src="../js/components/RecipeDetails.js"></script>
     <script src="../js/components/Search-btn.js"></script>
+    <script src="../js/components/Save.js"></script>
 
     <script>
         const mountedApp = app.mount("#app");

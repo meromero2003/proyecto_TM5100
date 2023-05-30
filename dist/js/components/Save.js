@@ -1,24 +1,27 @@
-app.component('register', {
+app.component('save', {
    
 
-    methods: {
-        
+    props: {
+        name: {
+            type: String,
+            default: "recipe name"
+        },
         
     },
 
     template:
         /*html*/
         `
-        <div class="modal fade" id="modalRegister" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="modalSave" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content bkg-grey">
                 
                 <div class="modal-body">
-                    El usuario ha sido creado
+                    La receta {{name}}, ha sido guardada
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" ><a href="./login.html">Iniciar Sesión</a></button>
+
                 </div>
                 </div>
             </div>

@@ -24,6 +24,9 @@ img {
 .container-img {
     max-width: 100%;
     min-height: 768px;
+    @include media-queries.respond-to(media-queries.$phone) {
+        min-height: 898px;
+    }
 }
 .container-img2 {
     max-width: 100%;

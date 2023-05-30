@@ -30,6 +30,12 @@ a {
     text-decoration: none;
     color: variables.$clr-white;
 }
+.btn-trans {
+    text-decoration: none;
+    background: transparent;
+    border: none;
+    border: transparent;
+}
 
 a:hover {
     color: variables.$clr-orange

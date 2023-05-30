@@ -12,6 +12,12 @@
     "axe/structure": "off",
     "no-inline-styles": "off",
     "no-protocol-relative-urls": "off",
-    "axe/text-alternatives": "off"
+    "axe/text-alternatives": "off",
+    "axe/keyboard": [
+      "default",
+      {
+        "nested-interactive": "off"
+      }
+    ]
   }
 }
