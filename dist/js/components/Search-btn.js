@@ -3,7 +3,7 @@ app.component('search-btn',{
     methods: {
         onClickKeyWordBtn(){
             this.$emit('selectedkeyword');
-            // console.log("keyword button")
+            console.log("keyword button")
         }
     },
     

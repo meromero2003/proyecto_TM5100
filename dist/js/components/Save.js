@@ -17,10 +17,10 @@ app.component('save', {
                 <div class="modal-content bkg-grey">
                 
                 <div class="modal-body">
-                    La receta {{name}}, ha sido guardada
+                    <p>La receta {{name}}, ha sido guardada</p> 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" >Close</button>
 
                 </div>
                 </div>

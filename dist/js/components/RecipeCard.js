@@ -41,15 +41,7 @@ app.component('recipe-card', {
     },
 
     methods: {
-        onClickLike() {
-            // console.log("Like");
-            this.addLikes++;
-        },
-        onClickDislike() {
-            // console.log("dislike");
-            if(this.addLikes>0) this.addLikes--;
-
-        },
+     
         onClickViewRecipe() {
             this.$emit('recipedetails', this.index);
             // permite mostrar los datos que ya tiene el card, sin tener que ahcer mas comunicaciones

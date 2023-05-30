@@ -3,21 +3,10 @@
     "development"
   ],
   "hints": {
-    "button-type": "off",
-    "compat-api/css": "off",
-    "css-prefix-order": "off",
     "axe/name-role-value": "off",
-    "axe/parsing": "off",
-    "axe/aria": "off",
-    "axe/structure": "off",
+    "button-type": "off",
+    "axe/keyboard": "off",
     "no-inline-styles": "off",
-    "no-protocol-relative-urls": "off",
-    "axe/text-alternatives": "off",
-    "axe/keyboard": [
-      "default",
-      {
-        "nested-interactive": "off"
-      }
-    ]
+    "axe/structure": "off"
   }
 }

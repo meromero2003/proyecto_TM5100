@@ -111,13 +111,7 @@ const app = Vue.createApp({
     // mounted es para hacer la copia de respaldo en all recipes con la info de recipes
 
     methods: {
-        onClickRecipeLike(index) {
-            this.recipes[index].likes += 1;
-        },
-
-        onClickRecipeDislike(index) {
-            if (this.recipes[index].likes > 0) this.recipes[index].likes -= 1;
-        },
+        
 
         onClickRecipeDetails(index) {
             // this.selectedIndex = index;www.themealdb.com/api/json/v1/1/lookup.php?i=52772
@@ -163,7 +157,7 @@ const app = Vue.createApp({
 
         onClickRecipeLike(index) {
             this.recipes[index].likes += 1;
-            
+ 
         },
 
         onClickRecipeDislike(index) {
@@ -220,7 +214,7 @@ const app = Vue.createApp({
         },
         onClickSelectedKeyWord() {
            
-            // console.log("onClickKeyWord");
+            console.log("onClickKeyWord");
             let recipename = document.getElementById("recipeword").value; 
             console.log(recipename);
 
@@ -232,7 +226,7 @@ const app = Vue.createApp({
                 .then(
                     (response) => {
                         let items = response.data.meals;
-                        // console.log(items);
+                        console.log(items);
                         this.recipes = [];
 
                         items.forEach(element => {
