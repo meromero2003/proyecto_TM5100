@@ -6,7 +6,7 @@ app.component('recipe-category', {
     },
     methods: {
         onClickCategory() {
-            console.log(this.name);
+            // console.log(this.name);
 
             this.$emit('selectedcategory', this.name);
         }

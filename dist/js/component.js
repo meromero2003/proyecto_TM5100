@@ -183,7 +183,7 @@ const app = Vue.createApp({
         },
         onClickSelectedKeyWord() {
            
-            console.log("onClickKeyWord");
+            // console.log("onClickKeyWord");
             let recipename = document.getElementById("recipeword").value; 
             console.log(recipename);
 
@@ -195,7 +195,7 @@ const app = Vue.createApp({
                 .then(
                     (response) => {
                         let items = response.data.meals;
-                        console.log(items);
+                        // console.log(items);
                         this.recipes = [];
 
                         items.forEach(element => {
