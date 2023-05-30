@@ -30,7 +30,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="stylesheet" href="../css/main.css">
 
- 
+
 
     <title>Grill Thrilling - Home</title>
 </head>
@@ -93,162 +93,65 @@
         <h2 class="mx-auto mb-5 display-4 fw-bold fst-italic mt-5"> TOP 10 <span class="red-h2">MEJORES</span> RECETAS
             DE LA SEMANA </h2>
 
-        
+
 
         <div class="main-carousel mb-3 container text-center flickity-enabled is-draggable"
             data-flickity='{ "cellAlign": "left", "contain": true }'>
 
             <div class="carousel-cell col-sm-12 col-lg-4 col-md-6 text-start best-recipes">
-                <div class="card-recipe text-start">
-                    <img src="../images/best-recipe.jpg" class="card-img-top m-image" alt="Pancakes">
-                    <div class="card-body d-flex">
-                        <h5 class="align-self-center flex-grow-1  mb-0 p-3 fw-bold fst-italic">
-                            Nombre de la receta</h4>
-                            <a class="align-self-center me-2 arrow-link " href="#">
-                                <i class="icon-link fa-solid fa-circle-chevron-right me-1"></i>
-                            </a>
-                    </div>
-                    <ul class="list-group list-group-flush ul">
-                        <p class="list-group-item p"><i class="fa-solid fa-clock me-3"></i>Prep. time</p>
-                        <p class="list-group-item p"><i class="fa-solid fa-utensils me-3"></i>Porciones</p>
-                        <p class="list-group-item p"><i class="fa-solid fa-square-check me-3"></i>Dificultad
-                        </p>
-                    </ul>
-                </div>
+                <recipe-card v-if="topRecipes.length>0" :image="topRecipes[1].image" :category="topRecipes[1].category" :name="topRecipes[1].name"
+                    :description="topRecipes[1].instructions" :time="topRecipes[1].time" :level="topRecipes[1].level" :index="topRecipes[1].id"
+                    v-on:recipedetails="onClickRecipeDetails"></recipe-card>
             </div>
 
             <div class="carousel-cell col-sm-12 col-lg-4 col-md-6 text-start best-recipes">
-                <div class="card-recipe text-start">
-                    <img src="../images/best-recipe.jpg" class="card-img-top m-image" alt="Pancakes">
-                    <div class="card-body d-flex">
-                        <h4 class="align-self-center flex-grow-1  mb-0 p-3 fw-bold fst-italic">
-                            Nombre de la receta</h4>
-                        <a class="align-self-center me-2 arrow-link" href="#">
-                            <i class="icon-link fa-solid fa-circle-chevron-right me-1"></i>
-                        </a>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <p class="list-group-item p"><i class="fa-solid fa-clock me-3"></i>Prep. time</p>
-                        <p class="list-group-item p"><i class="fa-solid fa-utensils me-3"></i>Porciones</p>
-                        <p class="list-group-item p"><i class="fa-solid fa-square-check me-3"></i>Dificultad
-                        </p>
-                    </ul>
-                </div>
+                <recipe-card v-if="topRecipes.length>0" :image="topRecipes[2].image" :category="topRecipes[2].category" :name="topRecipes[2].name"
+                    :description="topRecipes[2].instructions" :time="topRecipes[2].time" :level="topRecipes[2].level" :index="topRecipes[2].id"
+                    v-on:recipedetails="onClickRecipeDetails"></recipe-card>
             </div>
 
             <div class="carousel-cell col-sm-12 col-lg-4 col-md-6 text-start best-recipes">
-                <div class="card-recipe text-start">
-                    <img src="../images/best-recipe.jpg" class="card-img-top m-image" alt="Pancakes">
-                    <div class="card-body d-flex">
-                        <h4 class="align-self-center flex-grow-1  mb-0 p-3 fw-bold fst-italic">
-                            Nombre de la receta</h4>
-                        <a class="align-self-center me-2 arrow-link" href="#">
-                            <i class="icon-link fa-solid fa-circle-chevron-right me-1"></i>
-                        </a>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <p class="list-group-item p"><i class="fa-solid fa-clock me-3"></i>Prep. time</p>
-                        <p class="list-group-item p"><i class="fa-solid fa-utensils me-3"></i>Porciones</p>
-                        <p class="list-group-item p"><i class="fa-solid fa-square-check me-3"></i>Dificultad
-                        </p>
-                    </ul>
-                </div>
+                <recipe-card v-if="topRecipes.length>0" :image="topRecipes[3].image" :category="topRecipes[3].category" :name="topRecipes[3].name"
+                    :description="topRecipes[3].instructions" :time="topRecipes[3].time" :level="topRecipes[3].level" :index="topRecipes[3].id"
+                    v-on:recipedetails="onClickRecipeDetails"></recipe-card>
             </div>
 
             <div class="carousel-cell col-sm-12 col-lg-4 col-md-6 text-start best-recipes">
-                <div class="card-recipe text-start">
-                    <img src="../images/best-recipe.jpg" class="card-img-top m-image" alt="Pancakes">
-                    <div class="card-body d-flex">
-                        <h4 class="align-self-center flex-grow-1  mb-0 p-3 fw-bold fst-italic">
-                            Nombre de la receta</h4>
-                        <a class="align-self-center me-2 arrow-link" href="#">
-                            <i class="icon-link fa-solid fa-circle-chevron-right me-1"></i>
-                        </a>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <p class="list-group-item p"><i class="fa-solid fa-clock me-3"></i>Prep. time</p>
-                        <p class="list-group-item p"><i class="fa-solid fa-utensils me-3"></i>Porciones</p>
-                        <p class="list-group-item p"><i class="fa-solid fa-square-check me-3"></i>Dificultad
-                        </p>
-                    </ul>
-                </div>
+                <recipe-card v-if="topRecipes.length>0" :image="topRecipes[4].image" :category="topRecipes[4].category" :name="topRecipes[4].name"
+                    :description="topRecipes[4].instructions" :time="topRecipes[4].time" :level="topRecipes[4].level" :index="topRecipes[4].id"
+                    v-on:recipedetails="onClickRecipeDetails"></recipe-card>
+            </div>
+            
+            <div class="carousel-cell col-sm-12 col-lg-4 col-md-6 text-start best-recipes">
+                <recipe-card v-if="topRecipes.length>0" :image="topRecipes[5].image" :category="topRecipes[5].category" :name="topRecipes[5].name"
+                    :description="topRecipes[5].instructions" :time="topRecipes[5].time" :level="topRecipes[5].level" :index="topRecipes[5].id"
+                    v-on:recipedetails="onClickRecipeDetails"></recipe-card>
             </div>
 
             <div class="carousel-cell col-sm-12 col-lg-4 col-md-6 text-start best-recipes">
-                <div class="card-recipe text-start">
-                    <img src="../images/best-recipe.jpg" class="card-img-top m-image" alt="Pancakes">
-                    <div class="card-body d-flex">
-                        <h4 class="align-self-center flex-grow-1  mb-0 p-3 fw-bold fst-italic">
-                            Nombre de la receta</h4>
-                        <a class="align-self-center me-2 arrow-link" href="#">
-                            <i class="icon-link fa-solid fa-circle-chevron-right me-1"></i>
-                        </a>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <p class="list-group-item p"><i class="fa-solid fa-clock me-3"></i>Prep. time</p>
-                        <p class="list-group-item p"><i class="fa-solid fa-utensils me-3"></i>Porciones</p>
-                        <p class="list-group-item p"><i class="fa-solid fa-square-check me-3"></i>Dificultad
-                        </p>
-                    </ul>
-                </div>
+                <recipe-card v-if="topRecipes.length>0" :image="topRecipes[6].image" :category="topRecipes[6].category" :name="topRecipes[6].name"
+                    :description="topRecipes[6].instructions" :time="topRecipes[6].time" :level="topRecipes[6].level" :index="topRecipes[6].id"
+                    v-on:recipedetails="onClickRecipeDetails"></recipe-card>
             </div>
 
             <div class="carousel-cell col-sm-12 col-lg-4 col-md-6 text-start best-recipes">
-                <div class="card-recipe text-start">
-                    <img src="../images/best-recipe.jpg" class="card-img-top m-image" alt="Pancakes">
-                    <div class="card-body d-flex">
-                        <h4 class="align-self-center flex-grow-1  mb-0 p-3 fw-bold fst-italic">
-                            Nombre de la receta</h4>
-                        <a class="align-self-center me-2 arrow-link" href="#">
-                            <i class="icon-link fa-solid fa-circle-chevron-right me-1"></i>
-                        </a>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <p class="list-group-item p"><i class="fa-solid fa-clock me-3"></i>Prep. time</p>
-                        <p class="list-group-item p"><i class="fa-solid fa-utensils me-3"></i>Porciones</p>
-                        <p class="list-group-item p"><i class="fa-solid fa-square-check me-3"></i>Dificultad
-                        </p>
-                    </ul>
-                </div>
+                <recipe-card v-if="topRecipes.length>0" :image="topRecipes[7].image" :category="topRecipes[7].category" :name="topRecipes[7].name"
+                    :description="topRecipes[7].instructions" :time="topRecipes[7].time" :level="topRecipes[7].level" :index="topRecipes[7].id"
+                    v-on:recipedetails="onClickRecipeDetails"></recipe-card>
             </div>
-
             <div class="carousel-cell col-sm-12 col-lg-4 col-md-6 text-start best-recipes">
-                <div class="card-recipe text-start">
-                    <img src="../images/best-recipe.jpg" class="card-img-top m-image" alt="Pancakes">
-                    <div class="card-body d-flex">
-                        <h4 class="align-self-center flex-grow-1  mb-0 p-3 fw-bold fst-italic">
-                            Nombre de la receta</h4>
-                        <a class="align-self-center me-2 arrow-link" href="#">
-                            <i class="icon-link fa-solid fa-circle-chevron-right me-1"></i>
-                        </a>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <p class="list-group-item p"><i class="fa-solid fa-clock me-3"></i>Prep. time</p>
-                        <p class="list-group-item p"><i class="fa-solid fa-utensils me-3"></i>Porciones</p>
-                        <p class="list-group-item p"><i class="fa-solid fa-square-check me-3"></i>Dificultad
-                        </p>
-                    </ul>
-                </div>
+                <recipe-card v-if="topRecipes.length>0" :image="topRecipes[8].image" :category="topRecipes[8].category" :name="topRecipes[8].name"
+                    :description="topRecipes[8].instructions" :time="topRecipes[8].time" :level="topRecipes[8].level" :index="topRecipes[8].id"
+                    v-on:recipedetails="onClickRecipeDetails"></recipe-card>
             </div>
-
             <div class="carousel-cell col-sm-12 col-lg-4 col-md-6 text-start best-recipes">
-                <div class="card-recipe text-start">
-                    <img src="../images/best-recipe.jpg" class="card-img-top m-image" alt="Pancakes">
-                    <div class="card-body d-flex">
-                        <h4 class="align-self-center flex-grow-1  mb-0 p-3 fw-bold fst-italic">
-                            Nombre de la receta</h4>
-                        <a class="align-self-center me-2 arrow-link" href="#">
-                            <i class="icon-link fa-solid fa-circle-chevron-right me-1"></i>
-                        </a>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <p class="list-group-item p"><i class="fa-solid fa-clock me-3"></i>Prep. time</p>
-                        <p class="list-group-item p"><i class="fa-solid fa-utensils me-3"></i>Porciones</p>
-                        <p class="list-group-item p"><i class="fa-solid fa-square-check me-3"></i>Dificultad
-                        </p>
-                    </ul>
-                </div>
+                <recipe-card v-if="topRecipes.length>0" :image="topRecipes[9].image" :category="topRecipes[9].category" :name="topRecipes[9].name"
+                    :description="topRecipes[9].instructions" :time="topRecipes[9].time" :level="topRecipes[9].level" :index="topRecipes[9].id"
+                    v-on:recipedetails="onClickRecipeDetails"></recipe-card>
             </div>
+            
+
+
 
         </div>
 
@@ -465,7 +368,6 @@
     <script src="../js/components/RecipeCategory.js"></script>
     <script src="../js/components/RecipeCard.js"></script>
     <script src="../js/components/RecipeDetails.js"></script>
-    <script src="../js/components/RecipeCardTop.js"></script>
     <script src="../js/components/Search-btn.js"></script>
 
     <script>

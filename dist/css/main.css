@@ -14072,6 +14072,10 @@ img {
   padding-bottom: 2rem;
 }
 
+.flickity-viewport {
+  height: 666px !important;
+}
+
 @media only screen and (max-width: 480px) {
   .border-end {
     border-right: none !important;
