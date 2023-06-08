@@ -99,8 +99,8 @@ const app = Vue.createApp({
                             })
                         }
                     });
-                    console.log(this.topRecipes);
-                    console.log(this.topRecipes[0].name);
+                    // console.log(this.topRecipes);
+                    // console.log(this.topRecipes[0].name);
                 }
             )
             .catch(

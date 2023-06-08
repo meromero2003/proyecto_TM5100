@@ -174,7 +174,6 @@ app.component('recipe-details', {
                
                 </div>
             </div>
-        </div>
         `
 })
 
