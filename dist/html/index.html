@@ -201,7 +201,7 @@
                                 data-bs-parent="#accordionFlushExample">
                                 <ul class="list-group list-group-flush">
                                     <li v-for="(category, index) in categories" class="nav-item">
-                                        <recipe-category :name="category.name"
+                                        <recipe-category :name="category.name" :id="category.id"
                                             v-on:selectedcategory="onClickSelectedCategory"> </recipe-category>
                                     </li>
                                 </ul>
@@ -220,22 +220,12 @@
                             <div id="flush-collapseTwo" class="accordion-collapse collapse"
                                 data-bs-parent="#accordionFlushExample">
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item"><a class="list-link" href="#"><i
-                                                class="fa-solid fa-calendar-check me-3"></i>Todas</a> </li>
-                                    <li class="list-group-item"><a class="list-link" href="#"><i
-                                                class="fa-solid fa-calendar-check me-3"></i>Cumpleaños</a></li>
-                                    <li class="list-group-item"><a class="list-link" href="#"><i
-                                                class="fa-solid fa-calendar-check me-3"></i>Día del Padre</a></li>
-                                    <li class="list-group-item"><a class="list-link" href="#"><i
-                                                class="fa-solid fa-calendar-check me-3"></i>Día de la Madre</a></li>
-                                    <li class="list-group-item"><a class="list-link" href="#"><i
-                                                class="fa-solid fa-calendar-check me-3"></i>Día del niño</a></li>
-                                    <li class="list-group-item"><a class="list-link" href="#"><i
-                                                class="fa-solid fa-calendar-check me-3"></i>Navidad</a></li>
-                                    <li class="list-group-item"><a class="list-link" href="#"><i
-                                                class="fa-solid fa-calendar-check me-3"></i>Semana Santa</a></li>
-                                    <li class="list-group-item"><a class="list-link" href="#"><i
-                                                class="fa-solid fa-calendar-check me-3"></i>Verano</a></li>
+                                    <ul class="list-group list-group-flush">
+                                        <li v-for="(occasions, index) in occasions" class="nav-item">
+                                            <recipe-occasions :name="occasions.name" :id="occasions.id"
+                                                v-on:selectedoccasions="onClickSelectedOcassions"> </recipe-occasions>
+                                        </li>
+                                    </ul>
                                 </ul>
 
                             </div>
@@ -252,12 +242,12 @@
                             <div id="flush-collapseThree" class="accordion-collapse collapse"
                                 data-bs-parent="#accordionFlushExample">
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item"><a class="list-link" href="#"><i
-                                                class="fa-solid fa-square-check me-3"></i>Fácil</a> </li>
-                                    <li class="list-group-item"><a class="list-link" href="#"><i
-                                                class="fa-solid fa-square-check me-3"></i>Intermedio</a></li>
-                                    <li class="list-group-item"><a class="list-link" href="#"><i
-                                                class="fa-solid fa-square-check me-3"></i>Avanzado</a></li>
+                                    <ul class="list-group list-group-flush">
+                                        <li v-for="(levels, index) in levels" class="nav-item">
+                                            <recipe-levels :name="levels.name" :id="levels.id"
+                                                v-on:selectedlevels="onClickSelectedLevels"> </recipe-levels>
+                                        </li>
+                                    </ul>
                                 </ul>
 
                             </div>
@@ -291,7 +281,7 @@
 
                             <div class="row mt-4">
                                 <recipe-details :image="recipe.image" :name="recipe.name" :category="recipe.category"
-                                    :level="recipe.level" :time="recipe.time" :level="recipe.level"
+                                    :level="recipe.level" :time="recipe.time" :description="recipe.description" :level="recipe.level"
                                     :ingredients="recipe.ingredients" :instructions="recipe.instructions"
                                     v-on:recipelike="onClickRecipeLike"
                                     v-on:recipedislike="onClickRecipeDislike"></recipe-details>
@@ -379,6 +369,8 @@
 
 
     <script src="../js/components/RecipeCategory.js"></script>
+    <script src="../js/components/RecipeOccasions.js"></script>
+    <script src="../js/components/RecipeLevels.js"></script>
     <script src="../js/components/RecipeCard.js"></script>
     <script src="../js/components/RecipeDetails.js"></script>
     <script src="../js/components/Search-btn.js"></script>

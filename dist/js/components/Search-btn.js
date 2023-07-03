@@ -11,7 +11,7 @@ app.component('search-btn',{
     /*html*/
 
     `
-    <button class="btn  search" v-on:keyword="onClickKeyWordBtn"><i class="fa-solid fa-magnifying-glass" style="color:white;"></i></button>
+    <button class="btn search" v-on:keyword="onClickKeyWordBtn"><i class="fa-solid fa-magnifying-glass" style="color:white;"></i></button>
     `
     
 

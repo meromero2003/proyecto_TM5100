@@ -30,7 +30,7 @@ app.component('recipe-card', {
             default: 10
         },
         index: {
-            type: String
+            type: Number
         },
         
     },

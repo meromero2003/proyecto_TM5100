@@ -83,13 +83,7 @@ app.component('recipe-details', {
                                 <div class="row g-0">
                                     <div class="card-body col">
                                         <h2 class="h2-card">{{name}}</h2>
-                                        <p class="card-text">Morbi id mi eget arcu ullamcorper luctus. In in tellus porttitor erat sagittis
-                                            tincidunt vel vitae felis. Aenean rhoncus diam eget lacus imperdiet, a luctus libero varius. Nunc
-                                            eget erat vitae neque finibus consequat euismod quis turpis. Cras eu metus convallis, placerat mi
-                                            nec, fringilla arcu. In porttitor gravida est quis vestibulum. Ut diam neque, volutpat quis risus
-                                            eu, maximus ultricies dolor. Aenean mattis, ex et venenatis egestas, tortor libero scelerisque sem,
-                                            sed iaculis enim quam nec enim. In elit mauris, maximus sed ante ut, porta dignissim ex. Vivamus
-                                            dapibus tortor et diam laoreet tincidunt sed et felis.</p>
+                                        <p class="card-text">{{description}}</p>
                                     </div>
                                     <div class="col-md-4 container-xxl my-4 me-3">
                                         <img v-bind:src="image" class="card-img-top" alt="featured-recipe">                                    <div class="row mt-3">
@@ -166,6 +160,19 @@ app.component('recipe-details', {
 
 
                             </section>
+                            </div>
+
+
+                            <div>
+                            <h4 class="orange border-bottom "> Recetas Relacionadas </h4>
+                            <div class="row">
+                                    <p class="col list-group-item p"><i class="fa-solid fa-clock me-3"></i>{{time}}mins
+                                    </p>
+                                    <p class="col list-group-item p"><i class="fa-solid fa-utensils me-3"></i>{{category}}
+                                    </p>
+                                    <p class="col list-group-item p"><i class="fa-solid fa-square-check me-3"></i>{{level}}
+                                    </p>
+                                </div>
                             </div>
 
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

@@ -4,13 +4,15 @@ const app = Vue.createApp({
             loading: true,
             all_recipes: [],
             selectedIndex: 0,
-            topRecipes:[],
+            topRecipes: [],
             hasRecipes: true,
             recipes: [
-                { id: "1", image: "../images/recipes/sushi.jpg", name: "Sushi", category: "Lunch", time: "20 mins", level: "Easy", likes: 18, ingredients: "300ml Sushi Rice, 100ml Rice wine, 2 tbs Caster Sugar, 3 tbs Mayonnaise, 1 tbs Rice wine, 1 tbs Soy Sauce1 Cucumber", instructions: "STEP 1 TO MAKE SUSHI ROLLS: Pat out some rice.Lay a nori sheet on the mat, shiny-side down.Dip your hands in the vinegared water, then pat handfuls of rice on top in a 1cm thick layer, leaving the furthest edge from you clear. STEP 2 Spread over some Japanese mayonnaise.Use a spoon to spread out a thin layer of mayonnaise down the middle of the rice." },
-               
+            
+
             ],
             categories: [],
+            occasions: [],
+            levels: [],
             recipe: {},
             search: {
                 type: String
@@ -21,17 +23,59 @@ const app = Vue.createApp({
 
     mounted: function () {
         this.all_recipes = this.recipes
+
+
+        //Categories Options
         axios({
             method: 'get',
-            url: 'https://www.themealdb.com/api/json/v1/1/list.php?c=list'
+            url: 'http://localhost/prueba1/public/api/recipes/categories'
         })
             .then(
                 (response) => {
                     // console.log(response.data.meals);
-                    let items = response.data.meals;
+                    let items = response.data;
                     items.forEach((element, index) => {
-                        this.categories.push({ id: index, name: element.strCategory });
+                        this.categories.push({ id: element.id, name: element.category });
                     });
+                    // console.log(this.categories)
+                }
+            )
+            .catch(
+                error => console.log(error)
+            );
+
+        //Occasions Options
+        axios({
+            method: 'get',
+            url: 'http://localhost/prueba1/public/api/recipes/occasions'
+        })
+            .then(
+                (response) => {
+                    // console.log(response.data.meals);
+                    let items = response.data;
+                    items.forEach((element, index) => {
+                        this.occasions.push({ id: element.id, name: element.occasion });
+                    });
+                    // console.log(this.occasions)
+                }
+            )
+            .catch(
+                error => console.log(error)
+            );
+
+        //Levels Options
+        axios({
+            method: 'get',
+            url: 'http://localhost/prueba1/public/api/recipes/levels'
+        })
+            .then(
+                (response) => {
+                    // console.log(response.data.meals);
+                    let items = response.data;
+                    items.forEach((element, index) => {
+                        this.levels.push({ id: element.id, name: element.level });
+                    });
+                    // console.log(this.levels)
                 }
             )
             .catch(
@@ -42,11 +86,11 @@ const app = Vue.createApp({
         axios({
 
             method: 'get',
-            url: 'https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood'
+            url: 'http://localhost/prueba1/public/api/recipes/all'
         })
             .then(
                 (response) => {
-                    let items = response.data.meals;
+                    let items = response.data;
                     // console.log(items);
 
                     this.recipes = [];
@@ -54,17 +98,19 @@ const app = Vue.createApp({
                     if (items.length > 0) this.loading = false;
 
                     items.forEach(element => {
-                        this.recipes.push({
-                            id: element.idMeal,
-                            image: element.strMealThumb,
-                            name: element.strMeal,
-                            category: 'Seafood',
-                            time: "20 mins",
-                            level: "Easy",
-                            likes: 18,
-                            ingredients: "NA",
-                            instructions: "NA",
-                        })
+                        if (this.recipes.length < 24) {
+                            this.recipes.push({
+                                id: element.id,
+                                name: element.name,
+                                image: 'http://localhost/prueba1/public/storage/imgs/' + element.image,
+                                category: element.category,
+                                time: element.total_time + " mins",
+                                level: element.level,
+                                likes: element.likes,
+                                ingredients: "NA",
+                                instructions: "NA",
+                            })
+                        }
                     });
                 }
             )
@@ -72,28 +118,28 @@ const app = Vue.createApp({
                 error => console.log(error)
             );
 
-            ///TOP RECIPES
+        ///TOP RECIPES
         axios({
 
             method: 'get',
-            url: 'https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood'
+            url: 'http://localhost/prueba1/public/api/recipes/top10'
         })
             .then(
                 (response) => {
-                    let items = response.data.meals;
+                    let items = response.data;
                     // console.log(items);
 
                     items.forEach(element => {
-                        if(this.topRecipes.length<10){
+                        if (this.topRecipes.length < 10) {
 
                             this.topRecipes.push({
-                                id: element.idMeal,
-                                image: element.strMealThumb,
-                                name: element.strMeal,
-                                category: 'Seafood',
-                                time: "20 mins",
-                                level: "Easy",
-                                likes: 18,
+                                id: element.id,
+                                name: element.name,
+                                image: 'http://localhost/prueba1/public/storage/imgs/' + element.image,
+                                category: element.category,
+                                time: element.total_time + " mins",
+                                level: element.level,
+                                likes: element.likes,
                                 ingredients: "NA",
                                 instructions: "NA",
                             })
@@ -111,43 +157,38 @@ const app = Vue.createApp({
     // mounted es para hacer la copia de respaldo en all recipes con la info de recipes
 
     methods: {
-        
+
 
         onClickRecipeDetails(index) {
-            // this.selectedIndex = index;www.themealdb.com/api/json/v1/1/lookup.php?i=52772
-            // console.log("recipe id -> " + index)
 
             // GET RECIPE DETAILS
             axios({
 
                 method: 'get',
-                url: 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=' + index
+                url: 'http://localhost/prueba1/public/api/recipes/recipe/' + index
             })
                 .then(
                     (response) => {
-                        let item = response.data.meals;
-                        // console.log(item);
+                        let item = response.data;
+                        console.log(item);
 
-                        this.recipe.id= item[0].idMeal;
-                        this.recipe.image= item[0].strMealThumb;
-                        this.recipe.name= item[0].strMeal;
-                        this.recipe.category= item[0].strCategory;
-                        this.recipe.time= "20 mins";
-                        this.recipe.level= "Easy";
-                        this.recipes.likes= 18;
-                        this.recipe.time= 20;
-                        this.recipe.instructions= item[0].strInstructions;
+                        this.recipe.id = item[0][0].id;
+                        this.recipe.image = 'http://localhost/prueba1/public/storage/imgs/' + item[0][0].image;
+                        this.recipe.name = item[0][0].name;
+                        this.recipe.description = item[0][0].description;
+                        this.recipe.category = item[0][0].category;
+                        this.recipe.time = item[0][0].total_time;
+                        this.recipe.level = item[0][0].level;
+                        this.recipes.likes = item[0][0].likes;
+                        this.recipe.instructions = item[0][0].preparation_instructions;
 
-                        let ingredientsList= "";
-                        for (let i = 1; i<=20; i++){
-                            if(item[0]["strIngredient"+ i] !="" && item[0]["strIngredient"+ i] !=null){
-                                ingredientsList+= item[0]["strMeasure"+ i] +"-" +item[0]["strIngredient"+ i] + "\n";
-                            }
+                        let ingredientsList="";
+                        for (let i = 0; i <= item[1].length-1; i++) {
+                            ingredientsList+= i +" "+ item[1][i].description+ "-"+ item[1][i].amount+ "-"+ item[1][i].measurement_unit;
                         }
-
                         this.recipe.ingredients= ingredientsList;
-                        console.log(this.recipe.ingredients);
-                        
+
+                        console.log(item[1].length-1)
                     }
                 )
                 .catch(
@@ -157,7 +198,7 @@ const app = Vue.createApp({
 
         onClickRecipeLike(index) {
             this.recipes[index].likes += 1;
- 
+
         },
 
         onClickRecipeDislike(index) {
@@ -177,29 +218,28 @@ const app = Vue.createApp({
                 this.selectedIndex = 0;
             }
         },
-        onClickSelectedCategory(category) {
-           
 
+        onClickSelectedCategory(id) {
             axios({
                 // GET ALL RECIPES BY CATEGORY FROM API
                 method: 'get',
-                url: 'https://www.themealdb.com/api/json/v1/1/filter.php?c=' + category
+                url: 'http://localhost/prueba1/public/api/recipes/filterby/category/' + id
             })
                 .then(
                     (response) => {
-                        let items = response.data.meals;
-                        console.log(items);
+                        let items = response.data;
+                        // console.log(items);
                         this.recipes = [];
 
                         items.forEach(element => {
                             this.recipes.push({
-                                id: element.idMeal,
-                                image: element.strMealThumb,
-                                name: element.strMeal,
-                                category: category,
-                                time: "20 mins",
-                                level: "Easy",
-                                likes: 18,
+                                id: element.id,
+                                name: element.name,
+                                image: 'http://localhost/prueba1/public/storage/imgs/' + element.image,
+                                category: element.category,
+                                time: element.total_time + " mins",
+                                level: element.level,
+                                likes: element.likes,
                                 ingredients: "NA",
                                 instructions: "NA",
                             })
@@ -208,36 +248,101 @@ const app = Vue.createApp({
                 )
                 .catch(
                     error => console.log(error)
-                );
-
-
+                )
         },
+
+        onClickSelectedOcassions(id) {
+            axios({
+                // GET ALL RECIPES BY OCCASION FROM API
+                method: 'get',
+                url: 'http://localhost/prueba1/public/api/recipes/filterby/occasion/' + id
+            })
+                .then(
+                    (response) => {
+                        let items = response.data;
+                        // console.log(items);
+                        this.recipes = [];
+
+                        items.forEach(element => {
+                            this.recipes.push({
+                                id: element.id,
+                                name: element.name,
+                                image: 'http://localhost/prueba1/public/storage/imgs/' + element.image,
+                                category: element.category,
+                                time: element.total_time + " mins",
+                                level: element.level,
+                                likes: element.likes,
+                                ingredients: "NA",
+                                instructions: "NA",
+                            })
+                        });
+                    }
+                )
+                .catch(
+                    error => console.log(error)
+                )
+        },
+
+        onClickSelectedLevels(id) {
+            axios({
+                // GET ALL RECIPES BY OCCASION FROM API
+                method: 'get',
+                url: 'http://localhost/prueba1/public/api/recipes/filterby/level/' + id
+            })
+                .then(
+                    (response) => {
+                        let items = response.data;
+                        // console.log(items);
+                        this.recipes = [];
+
+                        items.forEach(element => {
+                            this.recipes.push({
+                                id: element.id,
+                                name: element.name,
+                                image: 'http://localhost/prueba1/public/storage/imgs/' + element.image,
+                                category: element.category,
+                                time: element.total_time + " mins",
+                                level: element.level,
+                                likes: element.likes,
+                                ingredients: "NA",
+                                instructions: "NA",
+                            })
+                        });
+                    }
+                )
+                .catch(
+                    error => console.log(error)
+                )
+        },
+
+
+
         onClickSelectedKeyWord() {
-           
+
             console.log("onClickKeyWord");
-            let recipename = document.getElementById("recipeword").value; 
+            let recipename = document.getElementById("recipeword").value;
             console.log(recipename);
 
             axios({
                 // GET  RECIPES BY name FROM API
                 method: 'get',
-                url: 'https://www.themealdb.com/api/json/v1/1/search.php?s=' + recipename
+                url: 'http://localhost/prueba1/public/api/recipes/searchbyname/' + recipename
             })
                 .then(
                     (response) => {
-                        let items = response.data.meals;
+                        let items = response.data;
                         console.log(items);
                         this.recipes = [];
 
                         items.forEach(element => {
                             this.recipes.push({
-                                id: element.idMeal,
-                                image: element.strMealThumb,
-                                name: element.strMeal,
+                                id: element.id,
+                                name: element.name,
+                                image: 'http://localhost/prueba1/public/storage/imgs/' + element.image,
                                 category: element.category,
-                                time: "20 mins",
-                                level: "Easy",
-                                likes: 18,
+                                time: element.total_time + " mins",
+                                level: element.level,
+                                likes: element.likes,
                                 ingredients: "NA",
                                 instructions: "NA",
                             })

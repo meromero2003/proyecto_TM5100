@@ -1,4 +1,4 @@
-app.component('recipe-category', {
+app.component('recipe-levels', {
     props: {
         name: {
             type: String,
@@ -8,16 +8,16 @@ app.component('recipe-category', {
         }
     },
     methods: {
-        onClickCategory() {
+        onClickLevels() {
             // console.log(this.id);
 
-            this.$emit('selectedcategory', this.id);
+            this.$emit('selectedlevels', this.id);
         }
     },
     template:
         /*html*/
         `
-        <li class="list-group-item" v-on:click="onClickCategory"><a class="list-link"><i
+        <li class="list-group-item" v-on:click="onClickLevels"><a class="list-link"><i
         class="fa-solid fa-egg me-3" ></i>{{name}}</a> </li>
             
         `
