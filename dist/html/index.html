@@ -194,7 +194,7 @@
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#flush-collapseOne" aria-expanded="false"
                                     aria-controls="flush-collapseOne">
-                                    <h5>Categorías</h5>
+                                    <h5>Categories</h5>
                                 </button>
                             </h5>
                             <div id="flush-collapseOne" class="accordion-collapse collapse"
@@ -214,7 +214,7 @@
                                 <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse"
                                     data-bs-target="#flush-collapseTwo" aria-expanded="false"
                                     aria-controls="flush-collapseTwo">
-                                    <h5>Ocasiones</h5>
+                                    <h5>Occasions</h5>
                                 </button>
                             </h5>
                             <div id="flush-collapseTwo" class="accordion-collapse collapse"
@@ -236,7 +236,7 @@
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#flush-collapseThree" aria-expanded="false"
                                     aria-controls="flush-collapseThree">
-                                    <h5>Complejidad</h5>
+                                    <h5>Levels</h5>
                                 </button>
                             </h5>
                             <div id="flush-collapseThree" class="accordion-collapse collapse"
@@ -280,17 +280,19 @@
 
 
                             <div class="row mt-4">
-                                <recipe-details :image="recipe.image" :name="recipe.name" :category="recipe.category"
-                                    :level="recipe.level" :time="recipe.time" :description="recipe.description" :level="recipe.level"
-                                    :ingredients="recipe.ingredients" :instructions="recipe.instructions"
+                                <recipe-details :image="recipe.image" :name="recipe.name" :category="recipe.category" :occasion="recipe.occasion"
+                                    :level="recipe.level" :time="recipe.time" :preptime="recipe.preptime" :cooktime="recipe.cooktime" :description="recipe.description" :level="recipe.level"
+                                    :ingredients="recipe.ingredients" :likes="recipe.likes" :instructions="recipe.instructions" :related="recipe.related"
                                     v-on:recipelike="onClickRecipeLike"
-                                    v-on:recipedislike="onClickRecipeDislike"></recipe-details>
+                                    v-on:recipedislike="onClickRecipeDislike">
+                                </recipe-details>
+                                    
 
 
                                 <div v-for="(item, index) in recipes" class="col-lg-4  text-start">
                                     <save :name="item.name"></save>
-                                    <recipe-card :image="item.image" :category="item.category" :name="item.name"
-                                        :description="item.instructions" :time="item.time" :level="item.level"
+                                    <recipe-card :image="item.image" :category="item.category" :occasion="item.occasion" :name="item.name"
+                                        :description="item.instructions" :likes="item.likes" :time="item.time" :preptime="item.preptime" :cooktime="item.cooktime" :level="item.level" :related="item.related"
                                         :index="item.id" v-on:recipedetails="onClickRecipeDetails"></recipe-card>
                                     <hr style="color:white;width: 90%;margin-left: 2rem;">
                                 </div>

@@ -3,12 +3,16 @@ app.component('recipe-details', {
     data() {
         return {
             counter: 0,
-            search:""
+            search: ""
         }
     },
 
     props: {
         category: {
+            type: String,
+            default: "recipe category"
+        },
+        occasion: {
             type: String,
             default: "recipe category"
         },
@@ -21,6 +25,14 @@ app.component('recipe-details', {
             default: "recipe description"
         },
         time: {
+            type: Number,
+            default: 10
+        },
+        preptime: {
+            type: Number,
+            default: 10
+        },
+        cooktime: {
             type: Number,
             default: 10
         },
@@ -41,6 +53,10 @@ app.component('recipe-details', {
             type: Number,
             default: 10
         },
+        related: {
+            type: Array,
+            
+        },
 
     },
 
@@ -49,17 +65,19 @@ app.component('recipe-details', {
 
     data() {
         return {
-            addLikes: this.likes
+            addLikes: this.likes,
+            recipes: this.related
         }
     },
 
     methods: {
 
         onClickLike() {
-            this.addLikes++;
+            this.likes= this.likes+1;
+            console.log(this.likes)
         },
         onClickDislike() {
-            if (this.addLikes > 0) this.addLikes--;
+            if (this.likes > 0) this.likes--;
 
         },
     },
@@ -88,7 +106,7 @@ app.component('recipe-details', {
                                     <div class="col-md-4 container-xxl my-4 me-3">
                                         <img v-bind:src="image" class="card-img-top" alt="featured-recipe">                                    <div class="row mt-3">
                                             <button type="button" class="col btn btn-outline-warning" disabled>
-                                                <i><span class="fs-6">{{this.addLikes}}</span></i>
+                                                <i><span class="fs-6">{{likes}}</span></i>
                                             </button>
                                             <button type="button" class="col btn btn-outline-warning" v-on:click="onClickLike()">
                                                 <i class="fa fa-thumbs-up"><span class="fs-6"></span></i>
@@ -106,11 +124,6 @@ app.component('recipe-details', {
                                                 </i>
                                             </button>
 
-                                            <button type="button" class="col btn btn-outline-warning">
-                                                <i> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-share" viewBox="0 0 16 16">
-                                                    <path d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5zm-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/>
-                                                </svg></i>
-                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -125,12 +138,17 @@ app.component('recipe-details', {
                             <div>
                                 <h2 class="mx-auto mb-3 display-4 fw-bold fst-italic display-5 "> Detalles de la Receta </h2>
                                 <div class="row">
-                                    <p class="col list-group-item p"><i class="fa-solid fa-clock me-3"></i>{{time}}mins
-                                    </p>
-                                    <p class="col list-group-item p"><i class="fa-solid fa-utensils me-3"></i>{{category}}
-                                    </p>
-                                    <p class="col list-group-item p"><i class="fa-solid fa-square-check me-3"></i>{{level}}
-                                    </p>
+                                    <p class="col list-group-item p"><i class="fa-solid fa-clock me-3"></i>Total: {{time}}mins</p>
+
+                                    <p class="col list-group-item p"><i class="fa-solid fa-clock me-3"></i>Preparation: {{preptime}}mins</p>
+
+                                    <p class="col list-group-item p"><i class="fa-solid fa-clock me-3"></i>Cook: {{cooktime}}mins</p>
+
+                                    <p class="col list-group-item p"><i class="fa-solid fa-utensils me-3"></i>{{category}}</p>
+
+                                    <p class="col list-group-item p"><i class='fas fa-glass-cheers me-3' style='color: white'></i>{{occasion}}</p>
+                                    
+                                    <p class="col list-group-item p"><i class="fa-solid fa-square-check me-3"></i>{{level}}</p>
                                 </div>
                             </div>
 
@@ -140,15 +158,15 @@ app.component('recipe-details', {
                                     <div class=" mx-auto gy-5">
 
                                         <label class="form-check-label">{{ingredients}}</label>
-
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="row">
-                                <h4 class="orange border-bottom "> Instrucciones para la Receta</h4>
-                                <div class="my-4 text-center">
-                                    <div class=" mx-auto gy-5">
+                                        
+                                        </div>
+                                        </div>
+                                        
+                                        </div>
+                                        <div class="row">
+                                        <h4 class="orange border-bottom "> Instrucciones para la Receta</h4>
+                                        <div class="my-4 text-center">
+                                        <div class=" mx-auto gy-5">
 
                                             <li class="list-group-item">{{instructions}}</li>
                                             
@@ -165,15 +183,19 @@ app.component('recipe-details', {
 
                             <div>
                             <h4 class="orange border-bottom "> Recetas Relacionadas </h4>
-                            <div class="row">
-                                    <p class="col list-group-item p"><i class="fa-solid fa-clock me-3"></i>{{time}}mins
-                                    </p>
-                                    <p class="col list-group-item p"><i class="fa-solid fa-utensils me-3"></i>{{category}}
-                                    </p>
-                                    <p class="col list-group-item p"><i class="fa-solid fa-square-check me-3"></i>{{level}}
-                                    </p>
+                            <p>{{this.recipes}}</p>
+
+                            <div v-for="(item, index) in this.related" class="col-lg-4  text-start">
+                                    
+                                    <recipe-card :image="item.image" :category="item.category" :occasion="item.occasion" :name="item.name"
+                                        :description="item.instructions" :likes="item.likes" :time="item.time" :preptime="item.preptime" :cooktime="item.cooktime" :level="item.level" :related="item.relatedRecipes"
+                                        :index="item.id" v-on:recipedetails="onClickRecipeDetails"></recipe-card>
+                                    <hr style="color:white;width: 90%;margin-left: 2rem;">
                                 </div>
+                            
+
                             </div>
+                            
 
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     </div>

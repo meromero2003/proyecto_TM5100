@@ -9,6 +9,10 @@ app.component('recipe-card', {
             type: String,
             default: "recipe category"
         },
+        occasion: {
+            type: String,
+            default: "recipe category"
+        },
         name: {
             type: String,
             default: "recipe name"
@@ -18,6 +22,14 @@ app.component('recipe-card', {
             default: "recipe description"
         },
         time: {
+            type: String,
+            default: "recipe time"
+        },
+        preptime: {
+            type: String,
+            default: "recipe time"
+        },
+        cooktime: {
             type: String,
             default: "recipe time"
         },
@@ -31,6 +43,10 @@ app.component('recipe-card', {
         },
         index: {
             type: Number
+        },
+        related: {
+            type: Object,
+            
         },
         
     },
@@ -63,12 +79,10 @@ app.component('recipe-card', {
             </div>
 
             <ul class="list-group list-group-flush">
-                <p class="list-group-item p"><i class="fa-solid fa-clock me-3"></i>{{time}}
-                </p>
-                <p class="list-group-item p"><i class="fa-solid fa-utensils me-3"></i>{{category}}
-                </p>
-                <p class="list-group-item p"><i class="fa-solid fa-square-check me-3"></i>{{level}}
-                </p>
+                <p class="list-group-item p"><i class="fa-solid fa-clock me-3"></i>{{time}}</p>
+                <p class="list-group-item p"><i class="fa-solid fa-utensils me-3"></i>{{category}}</p>
+                <p class="list-group-item p"><i class='fas fa-glass-cheers me-3' style='color: white'></i>{{occasion}}</p>
+                <p class="list-group-item p"><i class="fa-solid fa-square-check me-3"></i>{{level}}</p>
             </ul>
         </div>`
         

@@ -6,10 +6,7 @@ const app = Vue.createApp({
             selectedIndex: 0,
             topRecipes: [],
             hasRecipes: true,
-            recipes: [
-            
-
-            ],
+            recipes: [],
             categories: [],
             occasions: [],
             levels: [],
@@ -104,7 +101,10 @@ const app = Vue.createApp({
                                 name: element.name,
                                 image: 'http://localhost/prueba1/public/storage/imgs/' + element.image,
                                 category: element.category,
+                                occasion: element.occasion,
                                 time: element.total_time + " mins",
+                                preptime: element.preparation_time + " mins",
+                                cooktime: element.cooking_time + " mins",
                                 level: element.level,
                                 likes: element.likes,
                                 ingredients: "NA",
@@ -137,7 +137,10 @@ const app = Vue.createApp({
                                 name: element.name,
                                 image: 'http://localhost/prueba1/public/storage/imgs/' + element.image,
                                 category: element.category,
+                                occasion: element.occasion,
                                 time: element.total_time + " mins",
+                                preptime: element.preparation_time + " mins",
+                                cooktime: element.cooking_time + " mins",
                                 level: element.level,
                                 likes: element.likes,
                                 ingredients: "NA",
@@ -170,16 +173,19 @@ const app = Vue.createApp({
                 .then(
                     (response) => {
                         let item = response.data;
-                        console.log(item);
+                        // console.log(item);
 
                         this.recipe.id = item[0][0].id;
                         this.recipe.image = 'http://localhost/prueba1/public/storage/imgs/' + item[0][0].image;
                         this.recipe.name = item[0][0].name;
                         this.recipe.description = item[0][0].description;
                         this.recipe.category = item[0][0].category;
+                        this.recipe.occasion = item[0][0].occasion;
                         this.recipe.time = item[0][0].total_time;
+                        this.recipe.preptime = item[0][0].preparation_time;
+                        this.recipe.cooktime = item[0][0].cooking_time;
                         this.recipe.level = item[0][0].level;
-                        this.recipes.likes = item[0][0].likes;
+                        this.recipe.likes = item[0][0].likes;
                         this.recipe.instructions = item[0][0].preparation_instructions;
 
                         let ingredientsList="";
@@ -188,7 +194,43 @@ const app = Vue.createApp({
                         }
                         this.recipe.ingredients= ingredientsList;
 
-                        console.log(item[1].length-1)
+                        let relatedRecipes= [];
+                                    
+                        relatedRecipes[0]= item[2][0];
+                        relatedRecipes[1]= item[2][1];
+                        relatedRecipes[2]= item[2][2];
+                        relatedRecipes[3]= item[2][3];
+
+                        this.recipe.related= relatedRecipes;
+
+
+                        console.log(this.recipe.related)
+                    }
+                )
+                .catch(
+                    error => console.log(error)
+                );
+        },
+
+        onClickLogin() {
+            // LOGIN
+            let useremail= document.getElementById("email").value;
+            let userpassword=document.getElementById("password").value;
+
+            console.log("useremail");
+            console.log(userpassword);
+            
+            axios({
+
+                method: 'get',
+                url: 'http://prueba1.test/api/users/login?email='+useremail+'&password='+userpassword
+            })
+                .then(
+                    (response) => {
+                        let item = response.data;
+                        console.log(item);
+
+                        
                     }
                 )
                 .catch(
@@ -198,7 +240,6 @@ const app = Vue.createApp({
 
         onClickRecipeLike(index) {
             this.recipes[index].likes += 1;
-
         },
 
         onClickRecipeDislike(index) {
@@ -237,7 +278,10 @@ const app = Vue.createApp({
                                 name: element.name,
                                 image: 'http://localhost/prueba1/public/storage/imgs/' + element.image,
                                 category: element.category,
+                                occasion: element.occasion,
                                 time: element.total_time + " mins",
+                                preptime: element.preparation_time + " mins",
+                                cooktime: element.cooking_time + " mins",
                                 level: element.level,
                                 likes: element.likes,
                                 ingredients: "NA",
@@ -269,7 +313,10 @@ const app = Vue.createApp({
                                 name: element.name,
                                 image: 'http://localhost/prueba1/public/storage/imgs/' + element.image,
                                 category: element.category,
+                                occasion: element.occasion,
                                 time: element.total_time + " mins",
+                                preptime: element.preparation_time + " mins",   
+                                cooktime: element.cooking_time + " mins",
                                 level: element.level,
                                 likes: element.likes,
                                 ingredients: "NA",
@@ -301,7 +348,10 @@ const app = Vue.createApp({
                                 name: element.name,
                                 image: 'http://localhost/prueba1/public/storage/imgs/' + element.image,
                                 category: element.category,
+                                occasion: element.occasion,
                                 time: element.total_time + " mins",
+                                preptime: element.preparation_time + " mins",
+                                cooktime: element.cooking_time + " mins",
                                 level: element.level,
                                 likes: element.likes,
                                 ingredients: "NA",
@@ -320,8 +370,10 @@ const app = Vue.createApp({
         onClickSelectedKeyWord() {
 
             console.log("onClickKeyWord");
+            event.preventDefault();
             let recipename = document.getElementById("recipeword").value;
             console.log(recipename);
+
 
             axios({
                 // GET  RECIPES BY name FROM API
@@ -340,7 +392,10 @@ const app = Vue.createApp({
                                 name: element.name,
                                 image: 'http://localhost/prueba1/public/storage/imgs/' + element.image,
                                 category: element.category,
+                                occasion: element.occasion,
                                 time: element.total_time + " mins",
+                                preptime: element.preparation_time + " mins",
+                                cooktime: element.cooking_time + " mins",
                                 level: element.level,
                                 likes: element.likes,
                                 ingredients: "NA",
