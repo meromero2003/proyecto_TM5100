@@ -8,6 +8,12 @@ app.component('recipe-details', {
     },
 
     props: {
+        id: {
+            type: Number,
+        },
+        userId: {
+            type: Number,
+        },
         category: {
             type: String,
             default: "recipe category"
@@ -65,7 +71,7 @@ app.component('recipe-details', {
 
     data() {
         return {
-            addLikes: this.likes,
+            // addLikes: this.likes,
             recipes: this.related
         }
     },
@@ -73,12 +79,11 @@ app.component('recipe-details', {
     methods: {
 
         onClickLike() {
-            this.likes= this.likes+1;
-            console.log(this.likes)
+            this.$emit('recipelike', this.id);
+            // console.log(this.userId);
         },
-        onClickDislike() {
-            if (this.likes > 0) this.likes--;
-
+        onClickSave() {
+            this.$emit('recipesave', this.id);
         },
     },
 
@@ -111,11 +116,9 @@ app.component('recipe-details', {
                                             <button type="button" class="col btn btn-outline-warning" v-on:click="onClickLike()">
                                                 <i class="fa fa-thumbs-up"><span class="fs-6"></span></i>
                                             </button>
-                                            <button type="button" class="col btn btn-outline-warning" v-on:click="onClickDislike()">
-                                                <i class="fa fa-thumbs-down"><span class="fs-6"></span></i>
-                                            </button>
+                                            
 
-                                            <button type="button" class="col btn btn-outline-warning" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#modalSave">
+                                            <button type="button" class="col btn btn-outline-warning" v-on:click="onClickSave()" >
                                                 <i> 
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark" viewBox="0 0 16 16">
                                                     <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"/>
@@ -157,7 +160,7 @@ app.component('recipe-details', {
                                 <div class="my-4 text-center">
                                     <div class=" mx-auto gy-5">
 
-                                        <label class="form-check-label">{{ingredients}}</label>
+                                        <li class="list-group-item">{{ingredients}}</li>
                                         
                                         </div>
                                         </div>
@@ -181,16 +184,14 @@ app.component('recipe-details', {
                             </div>
 
 
-                            <div>
-                            <h4 class="orange border-bottom "> Recetas Relacionadas </h4>
-                            <p>{{this.recipes}}</p>
-
-                            <div v-for="(item, index) in this.related" class="col-lg-4  text-start">
+                            <div class="row ms-2 me-2 ">
+                                <h4 class="orange border-bottom "> Recetas Relacionadas </h4>
+                                <div v-for="(item, index) in this.related" class="col text-start">
                                     
-                                    <recipe-card :image="item.image" :category="item.category" :occasion="item.occasion" :name="item.name"
+                                    <recipe-cardRelated :image="item.image" :category="item.category" :occasion="item.occasion" :name="item.name"
                                         :description="item.instructions" :likes="item.likes" :time="item.time" :preptime="item.preptime" :cooktime="item.cooktime" :level="item.level" :related="item.relatedRecipes"
-                                        :index="item.id" v-on:recipedetails="onClickRecipeDetails"></recipe-card>
-                                    <hr style="color:white;width: 90%;margin-left: 2rem;">
+                                        :index="item.id"></recipe-cardRelated>
+                                    
                                 </div>
                             
 

@@ -280,20 +280,20 @@
 
 
                             <div class="row mt-4">
-                                <recipe-details :image="recipe.image" :name="recipe.name" :category="recipe.category" :occasion="recipe.occasion"
+                                <recipe-details :image="recipe.image" :id="recipe.id" :name="recipe.name" :category="recipe.category" :occasion="recipe.occasion"
                                     :level="recipe.level" :time="recipe.time" :preptime="recipe.preptime" :cooktime="recipe.cooktime" :description="recipe.description" :level="recipe.level"
                                     :ingredients="recipe.ingredients" :likes="recipe.likes" :instructions="recipe.instructions" :related="recipe.related"
-                                    v-on:recipelike="onClickRecipeLike"
-                                    v-on:recipedislike="onClickRecipeDislike">
+                                    v-on:recipelike="onClickRecipeLike" v-on:recipesave="onClickRecipeSave"
+                                    >
                                 </recipe-details>
                                     
 
 
                                 <div v-for="(item, index) in recipes" class="col-lg-4  text-start">
                                     <save :name="item.name"></save>
-                                    <recipe-card :image="item.image" :category="item.category" :occasion="item.occasion" :name="item.name"
+                                    <recipe-card :image="item.image" :id="recipe.id"  :category="item.category" :occasion="item.occasion" :name="item.name"
                                         :description="item.instructions" :likes="item.likes" :time="item.time" :preptime="item.preptime" :cooktime="item.cooktime" :level="item.level" :related="item.related"
-                                        :index="item.id" v-on:recipedetails="onClickRecipeDetails"></recipe-card>
+                                        :index="item.id" v-on:recipedetails="onClickRecipeDetails" ></recipe-card>
                                     <hr style="color:white;width: 90%;margin-left: 2rem;">
                                 </div>
                             </div>
@@ -374,9 +374,10 @@
     <script src="../js/components/RecipeOccasions.js"></script>
     <script src="../js/components/RecipeLevels.js"></script>
     <script src="../js/components/RecipeCard.js"></script>
+    <script src="../js/components/RecipeCardRelated.js"></script>
     <script src="../js/components/RecipeDetails.js"></script>
     <script src="../js/components/Search-btn.js"></script>
-    <script src="../js/components/Save.js"></script>
+    
 
     <script>
         const mountedApp = app.mount("#app");

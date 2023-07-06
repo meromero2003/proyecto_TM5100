@@ -5,12 +5,16 @@ const app = Vue.createApp({
             all_recipes: [],
             selectedIndex: 0,
             topRecipes: [],
+            savedRecipes: [],
+            likedRecipes: [],
             hasRecipes: true,
             recipes: [],
             categories: [],
             occasions: [],
             levels: [],
             recipe: {},
+            variableUserId: "",
+            variableAccess:"",
             search: {
                 type: String
             }
@@ -78,6 +82,8 @@ const app = Vue.createApp({
             .catch(
                 error => console.log(error)
             );
+
+        
 
         // DEAULT RECIPES https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood
         axios({
@@ -156,6 +162,42 @@ const app = Vue.createApp({
                 error => console.log(error)
             );
 
+        ///SAVED RECIPES
+        axios({
+
+            method: 'get',
+            url: 'http://localhost/prueba1/public/api/users/savedrecipes/'+ localStorage.getItem('userid')
+        })
+            .then(
+                (response) => {
+                    let items = response.data;
+                    // console.log(items);
+
+                    items.forEach(element => {
+
+                            this.savedRecipes.push({
+                                id: element.id,
+                                name: element.name,
+                                image: 'http://localhost/prueba1/public/storage/imgs/' + element.image,
+                                category: element.category,
+                                occasion: element.occasion,
+                                time: element.total_time + " mins",
+                                preptime: element.preparation_time + " mins",
+                                cooktime: element.cooking_time + " mins",
+                                level: element.level,
+                                likes: element.likes,
+                                ingredients: "NA",
+                                instructions: "NA",
+                            })
+                    });
+                    // console.log(this.topRecipes);
+                    // console.log(this.topRecipes[0].name);
+                }
+            )
+            .catch(
+                error => console.log(error)
+            );
+
     },
     // mounted es para hacer la copia de respaldo en all recipes con la info de recipes
 
@@ -175,7 +217,7 @@ const app = Vue.createApp({
                         let item = response.data;
                         // console.log(item);
 
-                        this.recipe.id = item[0][0].id;
+                        this.recipe.id = index;
                         this.recipe.image = 'http://localhost/prueba1/public/storage/imgs/' + item[0][0].image;
                         this.recipe.name = item[0][0].name;
                         this.recipe.description = item[0][0].description;
@@ -188,23 +230,23 @@ const app = Vue.createApp({
                         this.recipe.likes = item[0][0].likes;
                         this.recipe.instructions = item[0][0].preparation_instructions;
 
-                        let ingredientsList="";
-                        for (let i = 0; i <= item[1].length-1; i++) {
-                            ingredientsList+= i +" "+ item[1][i].description+ "-"+ item[1][i].amount+ "-"+ item[1][i].measurement_unit;
+                        let ingredientsList = "";
+                        for (let i = 0; i <= item[1].length - 1; i++) {
+                            ingredientsList += i + " " + item[1][i].description + "-" + item[1][i].amount + "-" + item[1][i].measurement_unit;
                         }
-                        this.recipe.ingredients= ingredientsList;
+                        this.recipe.ingredients = ingredientsList;
 
-                        let relatedRecipes= [];
-                                    
-                        relatedRecipes[0]= item[2][0];
-                        relatedRecipes[1]= item[2][1];
-                        relatedRecipes[2]= item[2][2];
-                        relatedRecipes[3]= item[2][3];
+                        let relatedRecipes = [];
 
-                        this.recipe.related= relatedRecipes;
+                        relatedRecipes[0] = item[2][0];
+                        relatedRecipes[1] = item[2][1];
+                        relatedRecipes[2] = item[2][2];
+                        relatedRecipes[3] = item[2][3];
+
+                        this.recipe.related = relatedRecipes;
 
 
-                        console.log(this.recipe.related)
+                        // console.log(this.recipe.id)
                     }
                 )
                 .catch(
@@ -214,23 +256,30 @@ const app = Vue.createApp({
 
         onClickLogin() {
             // LOGIN
-            let useremail= document.getElementById("email").value;
-            let userpassword=document.getElementById("password").value;
+            event.preventDefault();
+            console.log("login");
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
 
-            console.log("useremail");
-            console.log(userpassword);
-            
+            console.log(email);
+            console.log(password);
+
             axios({
 
-                method: 'get',
-                url: 'http://prueba1.test/api/users/login?email='+useremail+'&password='+userpassword
+                method: 'post',
+                url: 'http://prueba1.test/api/users/login?email=' + email + '&password=' + password
             })
                 .then(
                     (response) => {
                         let item = response.data;
                         console.log(item);
-
+                        accessToken=item.accessToken;
+                        localStorage.setItem('access',item.accessToken);
+                        localStorage.setItem('userid',item.user.id);
                         
+                        this.variableUserId=localStorage.getItem('userid')
+                        console.log("variable user id "+this.variableUserId)
+                        window.location.href = './index.html'
                     }
                 )
                 .catch(
@@ -238,27 +287,108 @@ const app = Vue.createApp({
                 );
         },
 
-        onClickRecipeLike(index) {
-            this.recipes[index].likes += 1;
+        onClickLogout() {
+            // LOGIN
+            event.preventDefault();
+            console.log("logout");
+            //            
+            axios({
+                method: 'get',
+                url: 'http://localhost/prueba1/public/api/users/logout',
+                headers:{'Authorization' : `Bearer ${localStorage.getItem('access')}`}
+              }).then(
+                  (response) => {
+                    console.log(response)
+                    window.location.href='./login.html'
+                  }
+              ).catch(
+                  error => console.log(error)
+              );
         },
 
-        onClickRecipeDislike(index) {
-            if (this.recipes[index].likes > 0) this.recipes[index].likes -= 1;
+        onClickRegister() {
+            // LOGIN
+            event.preventDefault();
+            console.log("register");
+            let name = document.getElementById("name").value;
+            let lastName = document.getElementById("lastName").value;
+            let country = document.getElementById("country").value;
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+
+            // console.log(name);
+            // console.log(lastName);
+            // console.log(country);
+            // console.log(email);
+            // console.log(password);
+
+            axios({
+
+                method: 'post',
+                url: 'http://localhost/prueba1/public/api/users/register?name=' + name + '&last_name=' + lastName + '&country=' + country + '&email=' + email + '&password=' + password
+            })
+                .then(
+                    (response) => {
+                        let item = response.data;
+                        console.log(item);
+                        let token =
+                            window.location.href = './login.html'
+
+                    }
+                )
+                .catch(
+                    error => console.log(error)
+                );
         },
 
-        onClickPrevRecipe(index) {
-            this.selectedIndex--;
-            if (this.selectedIndex < 0) {
-                this.selectedIndex = this.recipes.length - 1
-            }
+        onClickRecipeLike(recipeId) {
+            event.preventDefault();
+            console.log(recipeId, localStorage.getItem('userid'));
+
+
+            axios({
+
+                method: 'get',
+                url: 'http://localhost/prueba1/public/api/users/likes/' + localStorage.getItem('userid') + '/' + recipeId
+            })
+                .then(
+                    (response) => {
+                        let item = response.data;
+                        console.log(item);
+                        
+                        // window.location.href = './index.html'
+
+                    }
+                )
+                .catch(
+                    error => console.log(error)
+                );
+        },
+        onClickRecipeSave(recipeId) {
+            event.preventDefault();
+            console.log(recipeId, localStorage.getItem('userid'));
+
+
+            axios({
+
+                method: 'get',
+                url: 'http://localhost/prueba1/public/api/users/saverecipe/' + localStorage.getItem('userid') + '/' + recipeId
+            })
+                .then(
+                    (response) => {
+                        let item = response.data;
+                        console.log(item);
+                        
+                        // window.location.href = './index.html'
+
+                    }
+                )
+                .catch(
+                    error => console.log(error)
+                );
         },
 
-        onClickNextRecipe(index) {
-            this.selectedIndex++;
-            if (this.selectedIndex > this.recipes.length - 1) {
-                this.selectedIndex = 0;
-            }
-        },
+        
 
         onClickSelectedCategory(id) {
             axios({
@@ -315,7 +445,7 @@ const app = Vue.createApp({
                                 category: element.category,
                                 occasion: element.occasion,
                                 time: element.total_time + " mins",
-                                preptime: element.preparation_time + " mins",   
+                                preptime: element.preparation_time + " mins",
                                 cooktime: element.cooking_time + " mins",
                                 level: element.level,
                                 likes: element.likes,

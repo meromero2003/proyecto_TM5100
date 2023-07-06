@@ -43,26 +43,26 @@
             <div class="align-self-center container-grey py-5">
                 <h3 class="fw-bold text-center mt-5 ">Registrarse</h3>
                 <h5 class="text-center h5">Te damos la bienvenida</h5>
-
+                
                 <form action="" method="">
-
+                    
                     <div class="row d-flex justify-content-center gap-3 mx-2">
-
+                        
                         <div class="mb-3 col-lg-9 col-md-9 col-sm-12">
-                            <label for="nombre" class="form-label">Nombre</label>
-                            <input id="nombre" class="form-control" type="text" name="nombre" placeholder="Nombre" required>
+                            <label for="name" class="form-label">Name</label>
+                            <input id="name" class="form-control" type="text" name="name" placeholder="Name" required>
                         </div>
                         
                         <div class="row col-lg-9 col-md-9 col-sm-12 p-0">
                             <div class="col mb-3 col-lg-9 col-md-9 col-sm-12">
-                                <label for="primerApellido" class="form-label fw-bold">Primer Apellido</label>
-                                <input id="primerApellido" class="form-control" name="primerApellido" type="text"
-                                    placeholder="Primer Apellido" required>
+                                <label for="lastName" class="form-label fw-bold">Last Name</label>
+                                <input id="lastName" class="form-control" name="lastName" type="text"
+                                    placeholder="Last Name" required>
                             </div>
                             <div class=" col mb-3 col-lg-9 col-md-9 col-sm-12">
-                                <label for="segundoApellido" class="form-label fw-bold">Segundo Apellido</label>
-                                <input id="segundoApellido" class="form-control" name="segundoApellido" type="text"
-                                    placeholder="Segundo Apellido" required>
+                                <label for="country" class="form-label fw-bold">Country</label>
+                                <input id="country" class="form-control" name="country" type="text"
+                                    placeholder="Country" required>
                             </div>
                         </div>
 
@@ -71,22 +71,18 @@
                             <input id="email" class="form-control" type="text" name="email" placeholder="Email" required>
                         </div>
 
-                        <div class="mb-3 col-lg-9 col-md-9 col-sm-12">
-                            <label for="usuario" class="form-label">Usuario</label>
-                            <input id="usuario" class="form-control" type="text" name="usuario" placeholder="Usuario" required>
-                        </div>
 
                         <div class="mb-3 col-lg-9 col-md-9 col-sm-12">
-                            <label for="contraseña" class="form-label">Contraseña</label>
-                            <input id="contraseña" class="form-control" type="password" name="contraseña" placeholder="Contraseña" required>
+                            <label for="password" class="form-label">Password</label>
+                            <input id="password" class="form-control" type="password" name="password" placeholder="Password" required>
                         </div>
                         
 
                     </div>
-                    <register></register>
+
                
 
-                     <button class="btn-trans ml" ><a class="nav-orange-btn" data-bs-toggle="modal" data-bs-target="#modalRegister">Registrarse</a></button>
+                     <button class="btn-trans ml nav-orange-btn" v-on:click="onClickRegister">Registrarse</button>
 
                     <p class=" text-center text-content">Al unirte, acepta los <span> <a class="text-link" >Términos y Politica de privacidad</a></span></p>
                 </form>
@@ -121,10 +117,6 @@
 <!-- main script -->
 <script src="../js/component.js"></script>
 
-<!-- <script src="./js/components/ClickCounter.js"></script> -->
-
-
-<script src="../js/components/Register.js"></script>
 
 <script>
     const mountedApp = app.mount("#app");
