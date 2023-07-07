@@ -17,6 +17,18 @@ p {
     padding: 0;
     margin: 0;
 }
+.p1 {
+    @include mixins.set-font(variables.$ffs, variables.$fw-semibold, variables.$fs-xxsm, variables.$clr-white);
+
+}
+
+.p-b{
+    padding-left: 2rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+
+    border-radius: 0.4rem;
+}
 
 label {
     @include mixins.set-font(variables.$ff, variables.$fw-regular, variables.$fs-xxsm, variables.$clr-white);
@@ -30,6 +42,7 @@ a {
     text-decoration: none;
     color: variables.$clr-white;
 }
+
 .btn-trans {
     text-decoration: none;
     background: transparent;
@@ -158,4 +171,8 @@ h6 {
         padding: 0;
         width: 100%;
     }
+}
+
+.form-control:disabled {
+    background-color: transparent;
 }

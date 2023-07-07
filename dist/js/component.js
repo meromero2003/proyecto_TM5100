@@ -7,6 +7,7 @@ const app = Vue.createApp({
             topRecipes: [],
             savedRecipes: [],
             likedRecipes: [],
+            userInfo: [],
             hasRecipes: true,
             recipes: [],
             categories: [],
@@ -17,7 +18,11 @@ const app = Vue.createApp({
             variableAccess:"",
             search: {
                 type: String
-            }
+            },
+            username:localStorage.getItem("username"),
+            useremail:localStorage.getItem("useremail"),
+            usercountry:localStorage.getItem("usercountry"),
+            userlastname:localStorage.getItem("userlastname"),
 
         }
     },
@@ -239,10 +244,21 @@ const app = Vue.createApp({
                         let relatedRecipes = [];
 
                         relatedRecipes[0] = item[2][0];
+                        relatedRecipes[0].image='http://localhost/prueba1/public/storage/imgs/' + item[2][0].image;
+                        relatedRecipes[0].time=item[2][0].total_time + " mins";
+                        
                         relatedRecipes[1] = item[2][1];
+                        relatedRecipes[1].image='http://localhost/prueba1/public/storage/imgs/' + item[2][1].image;
+                        relatedRecipes[1].time=item[2][1].total_time + " mins";
+                        
                         relatedRecipes[2] = item[2][2];
+                        relatedRecipes[2].image='http://localhost/prueba1/public/storage/imgs/' + item[2][2].image;
+                        relatedRecipes[2].time=item[2][2].total_time + " mins";
+                        
                         relatedRecipes[3] = item[2][3];
-
+                        relatedRecipes[3].image='http://localhost/prueba1/public/storage/imgs/' + item[2][3].image;
+                        relatedRecipes[3].time=item[2][3].total_time + " mins";
+                        
                         this.recipe.related = relatedRecipes;
 
 
@@ -273,13 +289,32 @@ const app = Vue.createApp({
                     (response) => {
                         let item = response.data;
                         console.log(item);
-                        accessToken=item.accessToken;
-                        localStorage.setItem('access',item.accessToken);
-                        localStorage.setItem('userid',item.user.id);
-                        
-                        this.variableUserId=localStorage.getItem('userid')
-                        console.log("variable user id "+this.variableUserId)
-                        window.location.href = './index.html'
+                        if(item.user.profiles_id==2){
+
+                            accessToken=item.accessToken;
+                            localStorage.setItem('access',item.accessToken);
+                            localStorage.setItem('userid',item.user.id);
+                            localStorage.setItem('username',item.user.name);
+                            localStorage.setItem('useremail',item.user.email);
+                            localStorage.setItem('usercountry',item.user.country);
+                            localStorage.setItem('userlastname',item.user.last_name);
+                            
+                            this.variableUserId=localStorage.getItem('userid')
+                            console.log("variable user id "+this.variableUserId)
+                            window.location.href = './index.html'
+                            
+
+                        }else{
+                            accessToken=item.accessToken;
+                            localStorage.setItem('access',item.accessToken);
+                            localStorage.setItem('userid',item.user.id);
+                            
+                            this.variableUserId=localStorage.getItem('userid')
+                            console.log("variable user id "+this.variableUserId)
+                            window.location.href = 'http://localhost/prueba1/public/recipes'
+
+                        }
+
                     }
                 )
                 .catch(
@@ -364,6 +399,7 @@ const app = Vue.createApp({
                     error => console.log(error)
                 );
         },
+
         onClickRecipeSave(recipeId) {
             event.preventDefault();
             console.log(recipeId, localStorage.getItem('userid'));
@@ -388,7 +424,30 @@ const app = Vue.createApp({
                 );
         },
 
-        
+        onClickRecoverPassword() {
+            event.preventDefault();
+            let email = document.getElementById("email").value;
+            console.log(email);
+
+
+            axios({
+
+                method: 'post',
+                url: 'http://localhost/prueba1/public/api/users/recoverpassword?email=' + email
+            })
+                .then(
+                    (response) => {
+                        let item = response.data;
+                        console.log(item);
+                        
+                        // window.location.href = './index.html'
+
+                    }
+                )
+                .catch(
+                    error => console.log(error)
+                );
+        },
 
         onClickSelectedCategory(id) {
             axios({

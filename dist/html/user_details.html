@@ -54,15 +54,6 @@
 
                     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
 
-                        <form class="d-flex mt-heather" role="search">
-                            <div class="input-group border-bottom mb-5 ">
-                                <button class="btn search" type="button" id="button-addon1"><i
-                                        class="fa-solid fa-magnifying-glass" style="color:white;"></i></button>
-                                <input type="text" class="form-control search" placeholder="Buscar..."
-                                    aria-label="Buscar" aria-describedby="button-addon1">
-                            </div>
-                        </form>
-
                         <div class="navbar-nav mb-2 row">
                             <div class="nav-item d-grid gap-2 d-md-flex justify-content-md-end mb-3">
                                 <button class="btn-trans"><a class="nav-orange-btn" href="./login.html">Iniciar
@@ -73,10 +64,10 @@
                             </div>
 
                             <div class="nav-item d-flex justify-content-end">
-                                <button class="nav-red-btn" href="index.html">Inicio</button>
+                                <button class="nav-red-btn" ><a href="./index.html">Inicio</a></button>
                                 <button class="nav-red-btn" href="#">Acerca de</button>
                                 <button class="nav-red-btn" href="#">Contactanos</button>
-                                <button class="nav-red-btn">Mi cuenta</button>
+                                <button class="nav-red-btn"><a href="./user_details.html">Mi cuenta</a></button>
                             </div>
 
                         </div>
@@ -94,21 +85,20 @@
         <!--/////////////////////////////////////////Recetas//////////////////////////////////////////-->
         <section class="container">
 
-            <h3> Nuestra seleccion de la <span class="red-h2">semana</span> para tí </h3>
-            <div class="row border-top">
+            <div class="row">
 
                 <!-- /////////////////////////////////FILTERS////////////////////////////////////////////// -->
 
                 <div class=" col-sm-12 mt-5">
                     <div class="justify-content-center d-flex">
-                        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist"
+                        <div class="nav flex-column nav-pills " id="v-pills-tab" role="tablist"
                             aria-orientation="vertical">
                             <button class="nav-link active border-bottom" id="v-pills-information-tab"
                                 data-bs-toggle="pill" data-bs-target="#v-pills-information" type="button" role="tab"
-                                aria-controls="v-pills-information" aria-selected="true">Informacion Personal</button>
+                                aria-controls="v-pills-information" aria-selected="true">My Info</button>
                             <button class="nav-link border-bottom" id="v-pills-colections-tab" data-bs-toggle="pill"
                                 data-bs-target="#v-pills-colections" type="button" role="tab"
-                                aria-controls="v-pills-colections" aria-selected="false">Colecciones</button>
+                                aria-controls="v-pills-colections" aria-selected="false">Colletions</button>
 
 
                         </div>
@@ -152,31 +142,26 @@
                             <div class="tab-pane fade show active container-grey-details" id="v-pills-information"
                                 role="tabpanel" aria-labelledby="v-pills-information-tab" tabindex="0">
 
-                                <form action="" method="">
+                                <form>
 
                                     <div class="row d-flex justify-content-center gap-3 mx-3">
-                                        <h3 class="px-5 h3-responisve">Mis detalles</h3>
+                                        <h3 class="px-5 pt-5 h3-responisve">My details</h3>
 
-                                        <h5 class="border-bottom px-5 h5">Información Personal</h5>
+                                        <h5 class="border-bottom px-5 h5">Personal Information</h5>
 
                                         <div class="mb-3 col-lg-9 col-md-9 col-sm-12">
-                                            <label for="name" class="form-label label-responisve">Name</label>
-                                            <input id="name" class="form-control" type="text" name="name"
-                                                placeholder="Name">
+                                            <p class="p1">Name</p>
+                                            <p class="mt-3 p-b border-bottom border-end border-top border-start">{{username}}</p>
                                         </div>
 
                                         <div class="row col-lg-9 col-md-9 col-sm-12 p-0">
                                             <div class="col mb-3 col-lg-9 col-md-9 col-sm-12">
-                                                <label for="lastName" class="form-label label-responisve fw-bold">Last
-                                                    Name</label>
-                                                <input id="lastName" class="form-control input-responisve"
-                                                    name="lastName" type="text" placeholder="Last Name">
+                                                <p class="p1">Last Name</p>
+                                                <p class="mt-3 p-b border-bottom border-end border-top border-start">{{userlastname}}</p>
                                             </div>
                                             <div class=" col mb-3 col-lg-9 col-md-9 col-sm-12">
-                                                <label for="country" class="form-label label-responisve fw-bold">
-                                                    Country</label>
-                                                <input id="country" class="form-control input-responisve" name="country"
-                                                    type="text" placeholder="Country">
+                                                <p class="p1">Country</p>
+                                                <p class="mt-3 p-b border-bottom border-end border-top border-start">{{usercountry}}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -185,20 +170,12 @@
 
 
                                         <div class="row col-lg-9 col-md-9 col-sm-12 p-0  mb-4">
-                                            <h5 class="border-bottom px-5 h5">Correo Electrónico</h5>
-
                                             <div class="mb-3 ">
-                                                <label for="email" class="form-label label-responisve">Email</label>
-                                                <input id="email" class="form-control input-responisve" type="text"
-                                                    name="email" placeholder="Email">
+                                                <p class="p1">Email</p>
+                                                <p class="mt-3 p-b border-bottom border-end border-top border-start">{{useremail}}</p>
                                             </div>
 
-                                            <div class="mb-3 ">
-                                                <label for="password"
-                                                    class="form-label label-responisve">Password</label>
-                                                <input id="password" class="form-control input-responisve"
-                                                    type="password" name="password" placeholder="password">
-                                            </div>
+
 
                                             <button
                                                 class="nav-orange-btn mx-auto fw-bold d-flex justify-content-center mt-4 mb-3"
@@ -206,11 +183,12 @@
                                                 Log Out
                                             </button>
                                         </div>
+                                    </div>
                                 </form>
                             </div>
 
 
-                            
+
 
                         </div>
                     </div>
@@ -233,11 +211,13 @@
                     </div>
 
                     <div class="col-lg-3 col-sm-6 my-4 border-end  text-center">
-                        <h5 class="fw-bold mb-3"><a href="#" class="text-light footer-link">Inicio</a></h5>
+                        <h5 class="fw-bold mb-3"><a href="./index.html" class="text-light footer-link">Inicio</a></h5>
                         <ul class="list-unstyled">
-                            <h5 class="mb-3"><a href="#" class="text-light footer-link">Mi Usuario</a></h5>
-                            <h5 class="mb-3"><a href="#" class="text-light footer-link">Iniciar Sesión</a></h5>
-                            <h5 class=""><a href="#" class="text-light footer-link">Registrarse</a></h5>
+                            <h5 class="mb-3"><a href="./user_details.html" class="text-light footer-link">Mi Usuario</a>
+                            </h5>
+                            <h5 class="mb-3"><a href="./login.html" class="text-light footer-link">Iniciar Sesión</a>
+                            </h5>
+                            <h5 class=""><a href="./register.html" class="text-light footer-link">Registrarse</a></h5>
                         </ul>
                     </div>
 
